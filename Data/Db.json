@@ -1,0 +1,91 @@
+{
+    "clientes": [
+      {
+        "id": 1,
+        "nombre": "Juan",
+        "direccion_entrega": "Calle Principal 123",
+        "correo": "juan@example.com",
+        "telefono": "555-1234",
+        "productos_comprados": [
+          {
+            "id_producto": 101,
+            "nombre_producto": "Tomate",
+            "cantidad": 2,
+            "precio_unitario": 1.5
+          },
+          {
+            "id_producto": 102,
+            "nombre_producto": "Lechuga",
+            "cantidad": 1,
+            "precio_unitario": 2.0
+          }
+        ],
+        "historial_pedidos": [
+          {
+            "id_pedido": 101,
+            "fecha": "2024-04-13",
+            "productos": [
+              {
+                "id_producto": 101,
+                "nombre_producto": "Tomate",
+                "cantidad": 2,
+                "precio_unitario": 1.5
+              },
+              {
+                "id_producto": 102,
+                "nombre_producto": "Lechuga",
+                "cantidad": 1,
+                "precio_unitario": 2.0
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "campesinos": [
+      {
+        "id": 1,
+        "nombre_finca": "Finca La Esperanza",
+        "ubicacion_finca": "Km 10 Carretera Principal",
+        "correo": "campesino@example.com",
+        "telefono": "555-5678",
+        "productos_disponibles": [
+          {
+            "id_producto": 101,
+            "nombre_producto": "Tomate",
+            "descripcion": "Tomates frescos",
+            "precio": 1.5,
+            "foto": "https://example.com/tomate.jpg"
+          },
+          {
+            "id_producto": 102,
+            "nombre_producto": "Lechuga",
+            "descripcion": "Lechugas orgánicas",
+            "precio": 2.0,
+            "foto": "https://example.com/lechuga.jpg"
+          }
+        ],
+        "historial_ventas": [
+          {
+            "id_venta": 201,
+            "fecha": "2024-04-12",
+            "productos_vendidos": [
+              {
+                "id_producto": 101,
+                "nombre_producto": "Tomate",
+                "cantidad": 10,
+                "precio_unitario": 1.5
+              },
+              {
+                "id_producto": 102,
+                "nombre_producto": "Lechuga",
+                "cantidad": 5,
+                "precio_unitario": 2.0
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

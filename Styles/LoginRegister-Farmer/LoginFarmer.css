@@ -1,0 +1,107 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.fa-solid.fa-user {
+    font-size: 20vh;
+    margin: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    background-color: #fff;
+    padding: 50px;
+    max-width: 400px;
+    width: 80%;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #ccc;
+    width: calc(100% - 16px);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 390px) {
+    body {
+        background-color: aliceblue;
+        display: flex;
+        flex-direction: column;
+    }
+    .fa-solid.fa-user {
+        font-size: 20vh;
+        margin: 20px;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    form {
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 400px;
+        width: 80%;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        border: 1px solid black;
+        width: calc(100% - 16px);
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+
+    button {
+        width: calc(100% - 16px);
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: antiquewhite;
+        cursor: pointer;
+    }
+
+    button:hover {
+        width: calc(100% - 16px);
+
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
