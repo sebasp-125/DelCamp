@@ -22,7 +22,7 @@
         })
             .then((dataPost) => {
                 console.log(dataPost.data)
-                window.location.href = "../Components/NewProductoFarmer/ProductoNew.html";
+                window.location.href = "/Components/NewProductoFarmer/ProductoNew.html";
             })
             .catch((error) => {
                 console.error('Error up Post', error);
