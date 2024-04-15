@@ -1,27 +1,34 @@
-import axios from 'axios'
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();
+        const correoValue = document.getElementById('correo').value;
+        const nombreFincaValue = document.getElementById('text').value;
+        const descripcionValue = document.getElementById('descripcion').value;
+        const ubicacionValue = document.getElementById('ubicacion').value;
+        const telefonoValue = document.getElementById('telefono').value;
+        const passwordValue = document.getElementById('password').value;
+        const terminosChecked = document.getElementById('terminos').checked;
 
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const descripcion = document.getElementById('descripcion').value;
-    const productos = document.getElementById('productos').value;
-    const ubicacion = document.getElementById('ubicacion').value;
-    const correo = document.getElementById('correo').value;
-    const telefono = document.getElementById('telefono').value;
-    const aceptaTerminos = document.getElementById('terminos').checked;
 
-    axios.post('https://render-delcamp.onrender.com/clientes/' , {
-        nombre: nombre
-        
-    })
-    .then((dataPost) => {
-    
-    })
-    .catch((error) => {
-        console.error('Error up Post', error);
+        axios.post('https://render-delcamp.onrender.com/campesinos', {
+            id: Math.floor(Math.random() * 100) + 1,
+            nombre_finca: nombreFincaValue,
+            ubicacion_finca: ubicacionValue,
+            correo: correoValue,
+            password: passwordValue,
+            telefono: telefonoValue,
+            descripcionFarmer: descripcionValue,
+            terminos: terminosChecked
+        })
+            .then((dataPost) => {
+                console.log(dataPost.data)
+                window.location.href = "../Components/NewProductoFarmer/ProductoNew.html";
+            })
+            .catch((error) => {
+                console.error('Error up Post', error);
+            });
+
     });
-    
-});
 
+    //URGENTE 
+    //Organizar las rutas del NewProduct the farmer, Error 404, 

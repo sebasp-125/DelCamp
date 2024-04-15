@@ -1,4 +1,7 @@
-/* Estilos base */
+body {
+    display: flex;
+    flex-direction: column;
+}
 * {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -6,25 +9,41 @@
     padding: 0;
     box-sizing: border-box;
 }
+button{
+    background-color: rgb(44, 201, 228);
+    padding: 10px;
+    float: left;
+    border: none;
+    margin-left: 3px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
 
+h1 {
+    line-height: 1.9;
+}
 .ProfileFarmer {
-    width: 200px; 
-    height: 200px; 
-    border-radius: 50%; 
-    object-fit: cover;
+    width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
 }
 
 .content-profile {
-    display: flex;
-    background-color: rgb(90, 210, 110); 
-    width: 200px;
-    flex-direction: column;
-    padding: 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    margin-bottom: 20px; 
+    width: 100%;
+    padding: 10px; 
 }
 
+.ProductosStack_availables, img {
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #0e0101; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px; 
+}
 @media screen and (max-width: 390px) {
     button{
         background-color: rgb(44, 201, 228);

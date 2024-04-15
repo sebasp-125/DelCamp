@@ -13,11 +13,10 @@ try {
             <h1>Finca: ${ParametersId.data.nombre_finca}</h1>
             <h1>Ubicacion: ${ParametersId.data.ubicacion_finca}</h1>
             <a href="#">Telefono: ${ParametersId.data.telefono}</a>
-            </div>
-`;
+            </div>`;
+            
             ParametersId.data.productos_disponibles.forEach(Stock => {
                 ProductosStack_availables.innerHTML += `
-
                     <img src=${Stock.foto} alt="Product Stack Farmer" width="300px" />
                     <h1>${Stock.nombre_producto}</h1>
                     <p>${Stock.descripcion}</p>
@@ -40,7 +39,6 @@ try {
 
 
 const msgDelate_User = document.querySelector('.msgDelate_User');
-
 function DeleteParameter(ValidacionId) {
     if (!confirm("¿Estás seguro de que deseas eliminar este recurso?")) {
         return;
@@ -69,5 +67,7 @@ function DeleteParameter(ValidacionId) {
             console.error('Error al eliminar el recurso:', error);
         });
 }
+
+        
 
 

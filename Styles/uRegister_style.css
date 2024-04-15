@@ -42,7 +42,8 @@ label {
     margin-bottom: 5px;
 }
 
-input[type='text'] {
+input[type='text'],
+[type='email'] {
     width: 95%;
     padding: 8px;
     margin-bottom: 10px;
@@ -50,13 +51,6 @@ input[type='text'] {
     border-bottom: 2px solid #0ac763;
 }
 
-input[type='email'] {
-    width: 95%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-style: none;
-    border-bottom: 2px solid #0ac763;
-}
 
 input:focus {
     outline: none;
