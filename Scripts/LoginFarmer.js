@@ -5,6 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
     axios.get('https://render-delcamp.onrender.com/campesinos')
         .then((response) => {
+            console.log(response);w
             let validation = false;
             response.data.forEach(Validacion => {
                 Validacion.correo == Gmail && Validacion.password == password ? (
