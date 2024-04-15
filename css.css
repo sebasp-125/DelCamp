@@ -1,0 +1,209 @@
+body{
+    background-color: red;
+    margin: 0px;
+    padding:0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+header{
+    background-color: rgb(255, 255, 255);
+    width:100%; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header > img{
+    width:2%;
+    height: 5%;
+    margin-top:4px;
+    margin-right: 25px;
+}
+header > h3{
+    margin: 0px 55px 0px 45px 
+}
+.first{
+    background-color: green;
+    width: 100%;
+    height: 200vh;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+.imagen_carrusel{
+    background-image: url(../imagenes/banner.jpg);
+    float: left;
+    width: 100%;
+    height: 16%;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.imagen_carrusel>img{
+    width: 10%;
+    border-radius: 100px;
+    position: relative;
+    left:5%
+}
+.inform_vendedor{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 35%;
+    height: 69%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inform_vendedor>img{
+    width:85%;
+    position: relative;
+    top:-7%;
+    margin-bottom: -18%;
+}
+.inform_vendedor>p{
+    width:34%;
+    position: relative;
+    font-size: 35px;
+    margin-top:20px
+ }
+ .inform_vendedor>button{
+    margin-top:25%;
+    width: 70%;
+    height: 5%;
+    border-radius: 15px;
+    font-size: 20px;
+    border:none;
+    color:white;
+    background-color: rgb(54, 197, 116);
+ }
+.productos_comprados{
+    background-color: rgb(255, 255, 255);
+    float: right;
+    width: 65%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.productos_comprados>h1{
+    font-size:70px;
+}
+.productos_comprados>hr{
+    border: 7px solid rgb(164, 241, 206);
+    width: 55%;
+    border-radius: 5px;
+    margin-top: -3%;
+    margin-bottom: 20%;
+}
+table{
+    border-collapse: collapse;
+    margin-top: -12%;
+}
+th,.two2>thead>tr>th{
+    font-size: 35px;
+}
+td{
+    width: 310px;
+    border:2px solid gray;
+    padding: 3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.programar_envio{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 65%;
+    height: 29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.envío_ok{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    left: -22%;
+    margin: 0px;
+}
+.envío_ok>h2{
+    font-size: 35px;
+}
+.envío_ok>img{
+    height: 55%;
+    margin-left: 20px;
+}
+.two2{
+    border-collapse: collapse;
+    margin-top:15px;
+}
+.two2>tbody>tr>td{
+    width: 250px;
+    border:2px solid gray;
+    padding: 3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.pagar{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parrafo{
+    background-color: rgb(255, 255, 255);
+    font-size: 25px;
+    width: 30%;
+    margin-right: 7%;
+    text-align: center;
+}
+.pagar>button{
+    font-size: 35px;
+    width: 20%;
+    height: 25%;
+    display: flex;
+    margin-right:-6%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border:none;
+    color:white;
+    background-color: rgb(54, 197, 116);
+}
+.compras{
+    width: 13%;
+    margin-right: 40px;
+}
+.second{
+    background-color: blue;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+}
+.titulo_productos{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titulo_productos>h2{
+    font-size: 300%;
+}
+.titulo_productos>img{
+    width: 30%;
+}
+.productos_final{
+    background-color: purple;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
