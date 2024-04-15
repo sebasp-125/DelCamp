@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DelCamp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="/Styles/uRegister_style.css">
+    <link rel="stylesheet" href="/Styles/uRegister_style.css">
 </head>
 <body>
+    <i class="fa-solid fa-circle-arrow-left"></i>
+    <div class="container">
+        <i class="fa-solid fa-user"></i>
+        <h2>Inicio de Sesión</h2>
+        <form class="user-form">
+            <label for="user-type">Tipo de usuario</label>
+                <select class="user-type" id="user-type">
+                    <option disabled selected value="0">Tipo de usuario</option>
+                    <option value="buyer">Campesino</option>
+                    <option value="seller">Comprador</option>
+                </select>
+                <label for="user-lastname">Correo electrónico</label>
+                <input class="user-name" type="email" placeholder="Ejemplo@gmail.com">
     
+                <label for="user-lastname">Contraseña</label>
+                <input class="user-name" type="password" placeholder="********">
+            
+            <button class="btn-register" type="submit">Iniciar Sesión</button>
+            <p>¿Aun no tienes una cuenta? <a href="/Components/Login-Register-User/user_register.html">Registrate</a></p>
+            <p>Olvidaste tu contraseña? <a href="/Components/Login-Register-User/user_register.html">Recuperar Contraseña</a></p>
+
+        </form>
+    </div>
 </body>
 </html>
