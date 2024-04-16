@@ -8,59 +8,47 @@
     <link rel="stylesheet" href="/Styles/uRegister_style.css">
 </head>
 <body>
-    <i class="fa-solid fa-circle-arrow-left"></i>
-    <div class="container">
-        <i class="fa-solid fa-user"></i>
+    <i id="icono1" class="fa-solid fa-circle-arrow-left"></i>
+    <div id="container" class="container">
+        <i id="icono2" class="fa-solid fa-user"></i>
         <h2>Registro</h2>
-        <form class="user-form">
+        <form id="userForm" class="user-form">
             <label for="user-name">Nombre</label>
-            <input class="user-name" type="text" placeholder="@Pepito">
+            <input id="campoNombre" class="user-name" type="text" placeholder="@Pepito">
 
             <label for="user-lastname">Apellido</label>
-            <input class="user-name" type="text" placeholder="@Pérez Pérez">
+            <input id="campoApellido" class="user-lastname" type="text" placeholder="@Pérez Pérez">
             
             <label for="user-type">Tipo de usuario</label>
-                <select class="user-type" id="user-type">
+                <select id="tipoUsuario" class="user-type" id="user-type">
                     <option disabled selected value="0">Tipo de usuario</option>
                     <option value="buyer">Campesino</option>
                     <option value="seller">Comprador</option>
                 </select>
-                <label for="user-lastname">Correo electrónico</label>
-                <input class="user-name" type="email" placeholder="Ejemplo@gmail.com">
+                <label for="user-email">Correo electrónico</label>
+                <input id="campoCorreo" class="user-email" type="email" placeholder="Ejemplo@gmail.com">
     
-                <label for="user-lastname">Contraseña</label>
-                <input class="user-name" type="password" placeholder="********">
-            <div class="terms-conditions">
+                <label for="user-password">Contraseña</label>
+                <input id="campoContraseña" class="user-password" type="password" placeholder="********">
+            <div id="termsConditions" class="terms-conditions">
                 <label for="terms-conditions">Aceptar términos y condiciones</label>
-                <input type="checkbox" id="terms-conditions" required/>
+                <input id="checkboxTérminos" type="checkbox" required/>
             </div>
-            <div class="notifications">
+            <div id="notifications" class="notifications">
                 <label for="notifications">Notificaciones</label>
-                <input type="checkbox" id="notifications"/>
+                <input id="checkboxNotificaciones" type="checkbox"/>
             </div>
-            <div class="direct-message">
+            <div id="directMessage" class="direct-message">
                 <label for="direct-message">Recibir mensajes directos</label>
-                <input type="checkbox" id="direct-message"/>
+                <input id="checkboxMensajesDirectos" type="checkbox"/>
             </div>
             
-            <button class="btn-register" type="submit">Registrar</button>
-            <button class="btn-cancel" type="reset">Cancelar</button>
+            <button id="botonRegistro" class="btn-register" type="submit">Registrar</button>
+            <button id="botonCancelar" class="btn-cancel" type="reset">Cancelar</button>
         </form>
     </div>
 
-    
-    <script>
-             document.getElementById("user-type").addEventListener("change", function() {
-            let userType = this.value;
-            console.log(userType);
-
-            if (userType == "buyer") {
-                window.location.href = "../LoginRegister-Farmer/Register-Farmer.html"
-            } else if (userType == "seller") {
-                //Colocar la ruta al Login de comprador
-            }
-           
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Scripts/User-Register/UserRegister.js"></script>
 </body>
 </html>
