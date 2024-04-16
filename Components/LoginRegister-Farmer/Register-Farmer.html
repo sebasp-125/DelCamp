@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../Styles/LoginRegister-Farmer/RegisterFarmer.css">
+    <title>Regístrate en DelCamp</title>
+</head>
+<body>
+    <div class="SalirContent">
+        <a href="#">Salir</a>
+    </div>
+
+    <form action="">
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" name="correo" placeholder="example@example.com" required>
+
+        <label for="correo">Nombre de la Finca</label>
+        <input type="text" id="text" name="text" placeholder="Finca la Margarita" required>
+
+        <label for="descripcion">Descripción del Vendedor</label>
+        <textarea id="descripcion" name="descripcion" rows="4"
+            placeholder="Breve descripción de lo que vendes"></textarea>
+
+        <label for="ubicacion">Ubicación</label>
+        <input type="text" id="ubicacion" name="ubicacion" placeholder="Tu ubicación geográfica" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono">
+
+        <label for="telefono">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="*****">
+
+        <input type="checkbox" id="terminos" name="terminos" required>
+        <label for="terminos">Acepto los términos y condiciones</label>
+        <a href="../../Components/LoginRegister-Farmer/Login-Farmer.html">¿Ya tienes una cuenta?</a>
+        <button type="submit">Registrarse</button>
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="../../Scripts/RegisterFarmer.js"></script>
+</body>
+</html>
