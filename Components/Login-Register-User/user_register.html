@@ -47,5 +47,20 @@
             <button class="btn-cancel" type="reset">Cancelar</button>
         </form>
     </div>
+
+    
+    <script>
+             document.getElementById("user-type").addEventListener("change", function() {
+            let userType = this.value;
+            console.log(userType);
+
+            if (userType == "buyer") {
+                window.location.href = "../LoginRegister-Farmer/Register-Farmer.html"
+            } else if (userType == "seller") {
+                //Colocar la ruta al Login de comprador
+            }
+           
+        });
+    </script>
 </body>
 </html>

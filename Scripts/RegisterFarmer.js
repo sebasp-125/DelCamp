@@ -29,17 +29,3 @@
             });
 
     });
-
-    function Up(knex, Promise){
-        return knex('activities').insert({
-            accion1:'chaajaja',
-            accion2:'bhuaakak',
-            accion3:'nananana'
-        })
-    }
-
-    function down(knex, Promise){
-        return knex('activities').where('activities', 'chajajajaja').orWhere('activities', 'bhuaakak')
-    }
-    //URGENTE 
-    //Organizar las rutas del NewProduct the farmer, Error 404, 
