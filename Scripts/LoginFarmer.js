@@ -1,11 +1,10 @@
 const loginForm = document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
-    const Gmail = document.getElementById('gmail').value;
+    const Gmail = document.getElementById('gmail').value;xxx   
     const password = document.getElementById('password').value;
 
     axios.get('https://render-delcamp.onrender.com/campesinos')
-        .then((response) => {
-            
+        .then((response) => {perra
             let validation = false;
             response.data.forEach(Validacion => {
                 Validacion.correo == Gmail && Validacion.password == password ? (

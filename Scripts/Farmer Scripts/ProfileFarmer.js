@@ -14,7 +14,7 @@ try {
             <h1>Ubicacion: ${ParametersId.data.ubicacion_finca}</h1>
             <a href="#">Telefono: ${ParametersId.data.telefono}</a>
             </div>`;
-            
+           
             ParametersId.data.productos_disponibles.forEach(Stock => {
                 ProductosStack_availables.innerHTML += `
                     <img src=${Stock.foto} alt="Product Stack Farmer" width="300px" />

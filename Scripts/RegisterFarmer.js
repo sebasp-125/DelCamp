@@ -27,5 +27,4 @@
             .catch((error) => {
                 console.error('Error up Post', error);
             });
-
     });

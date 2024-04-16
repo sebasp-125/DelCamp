@@ -18,7 +18,7 @@ document.getElementById('CancellUp_Profile').addEventListener('click', function 
 AddProducts.style.display = 'none';
 
 
-function Up_Image_Profile() {
+function Up_Image_Profile(e) {
     let input = document.getElementById('inputGroupFile02'),
         ImageProfile = document.getElementById('ImageProfile'),
         progressOne = document.getElementById('progressOne'),
