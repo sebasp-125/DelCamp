@@ -29,6 +29,3 @@
             });
 
     });
-
-    //URGENTE 
-    //Organizar las rutas del NewProduct the farmer, Error 404, 
