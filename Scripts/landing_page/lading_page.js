@@ -1,8 +1,9 @@
 const ofertas =document.querySelector('.ofertas')
 try {
-    axios.get('https://render-delcamp.onrender.com/campesinos')
+    axios.get('https://render-delcamp.onrender.com/productos')
     .then((product)=> {
-        product.data.productos_disponibles.forEach(element => {
+        console.log(product.data);
+        product.data.forEach(element => {
             ofertas.innerHTML += `
         <div class="producto">
             <div class="descuento"><p>32% dto.</p></div>

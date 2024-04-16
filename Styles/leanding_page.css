@@ -61,8 +61,7 @@
     background: rgb(249, 249, 249);
     padding-top: 50px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    gap: 20px;
     align-items: center;
     position: relative;
     h1{
