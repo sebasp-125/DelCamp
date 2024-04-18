@@ -1,3 +1,4 @@
+
 console.log('--------------');
 // Message the warning cancel operation the register
 document.getElementById('CancellUp_Profile').addEventListener('click', function () {
@@ -65,34 +66,35 @@ document.getElementById('myForm').addEventListener('click', function (event) {
     if (nombreProductoValue && descripcionProductoValue && calidadProductoValue && precioProductoValue && descuentoProductoValue) {
         const params = new URLSearchParams(window.location.search);
         const newUserId = params.get('NewUserId');
-        axios.post('https://render-delcamp.onrender.com/productos', {
-            id_producto: Math.floor(Math.random() * 100) + 1,
-            nombre_producto: nombreProductoValue,
-            descripcion: descripcionProductoValue,
-            calidad_producto: calidadProductoValue,
-            precio: precioProductoValue,
-            descuento_producto: descuentoProductoValue
-        })
-            .then(response => {
-                console.log("Producto agregado correctamente:", response.data);
+        if (!newUserId) {
+            alert("Id inavlid")
+            return;
+        }
+        axios.get(`https://render-delcamp.onrender.com/campesinos/${newUserId}`)
+            .then((EmpaqueUser_Id) => {
+                axios.post(`https://render-delcamp.onrender.com/campesinos/${newUserId}`, {
+                    ...EmpaqueUser_Id.data,
+                    producto_disponible:
+                        [
+                            {
+                                nombre_producto: nombreProductoValue,
+                                descripcion: descripcionProductoValue,  
+                                calidad_producto: calidadProductoValue,
+                                precio: precioProductoValue,
+                            }
+                        ]
+                }).then((SendData) => {
+                    console.log("Send Data Satisfactorily", SendData.data);
+                }).catch((ErrorSend) => {
+                    console.error("Error in the Sentd Data ", ErrorSend.message)
+                })
             })
-            .catch(error => {
-                console.error('Error al enviar datos:', error);
-            });
+            .catch((ErrorEmpaque) => {
+                console.error("Error al desenpacar el contenido del Usuario con la id: " + newUserId + ": " + ErrorEmpaque.message);
+            })
+
     } else {
         console.log('Todos los campos deben estar llenos');
     }
 });
-
-// productos_disponibles : [
-//     {
-//         id_producto: Math.floor(Math.random() * 100) + 1,
-//         nombre_producto: nombreProductoValue,
-//         descripcion: descripcionProductoValue,
-//         calidad_producto: calidadProductoValue,
-//         precio: precioProductoValue,
-//         descuento_producto: descuentoProductoValue
-//     }
-// ]
-
 
