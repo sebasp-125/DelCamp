@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 
 .narvar{
     width: 100%;
@@ -56,19 +59,22 @@
 }
 
 .ofertas{
+    width: auto;
     height: 500px;
     padding: 20px;
     background: rgb(249, 249, 249);
     padding-top: 50px;
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
+    gap: 20px;
     align-items: center;
     position: relative;
+    overflow: hidden;
     h1{
         position: absolute;
         top: 20px;
-    }
+    } 
+    white-space: normal; 
     
 }
 
@@ -80,6 +86,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+   
   
 }
 
@@ -128,4 +135,10 @@
     p{
         font-size: 10px;
     }
+}
+
+footer{
+    width: 100%;
+    height: 400px;
+    background-image: url('/image/imagen\ futer.png');
 }
