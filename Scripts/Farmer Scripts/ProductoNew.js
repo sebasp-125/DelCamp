@@ -70,28 +70,28 @@ document.getElementById('myForm').addEventListener('click', function (event) {
             alert("Id inavlid")
             return;
         }
-        // axios.get(`https://render-delcamp.onrender.com/campesinos/${newUserId}`)
-        //     .then((EmpaqueUser_Id) => {
-        //         axios.post(`https://render-delcamp.onrender.com/campesinos/${newUserId}`, {
-        //             ...EmpaqueUser_Id.data,
-        //             producto_disponible:
-        //                 [
-        //                     {
-        //                         nombre_producto: nombreProductoValue,
-        //                         descripcion: descripcionProductoValue,  
-        //                         calidad_producto: calidadProductoValue,
-        //                         precio: precioProductoValue,
-        //                     }
-        //                 ]
-        //         }).then((SendData) => {
-        //             console.log("Send Data Satisfactorily", SendData.data);
-        //         }).catch((ErrorSend) => {
-        //             console.error("Error in the Sentd Data ", ErrorSend.message)
-        //         })
-        //     })
-        //     .catch((ErrorEmpaque) => {
-        //         console.error("Error al desenpacar el contenido del Usuario con la id: " + newUserId + ": " + ErrorEmpaque.message);
-        //     })
+        axios.get(`https://render-delcamp.onrender.com/campesinos/${newUserId}`)
+            .then((EmpaqueUser_Id) => {
+                axios.post(`https://render-delcamp.onrender.com/campesinos/${newUserId}`, {
+                    ...EmpaqueUser_Id.data,
+                    producto_disponible:
+                        [
+                            {
+                                nombre_producto: nombreProductoValue,
+                                descripcion: descripcionProductoValue,  
+                                calidad_producto: calidadProductoValue,
+                                precio: precioProductoValue,
+                            }
+                        ]
+                }).then((SendData) => {
+                    console.log("Send Data Satisfactorily", SendData.data);
+                }).catch((ErrorSend) => {
+                    console.error("Error in the Sentd Data ", ErrorSend.message)
+                })
+            })
+            .catch((ErrorEmpaque) => {
+                console.error("Error al desenpacar el contenido del Usuario con la id: " + newUserId + ": " + ErrorEmpaque.message);
+            })
 
     } else {
         console.log('Todos los campos deben estar llenos');
