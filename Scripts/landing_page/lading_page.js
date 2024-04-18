@@ -1,3 +1,4 @@
+let cantidadProductos=null
 const ofertas =document.querySelector('.ofertas')
 try {
     axios.get('https://render-delcamp.onrender.com/productos')
@@ -16,11 +17,15 @@ try {
                     <button>Agregar</button>
             </div>
         `
+        cantidadProductos += 1
+
         });
-        
+        ofertas.style.width = `calc(280px * ${cantidadProductos})`;
     })
 } catch (error) {
     console.log('error al caragr el producto', error);
 }
+
+
 
 
