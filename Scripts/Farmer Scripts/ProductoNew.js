@@ -16,7 +16,7 @@ document.getElementById('CancellUp_Profile').addEventListener('click', function 
 });
 
 //Remove second filter
-progressOne.style.display = 'none';
+progressOne.style.display = 'flex';
 
 //Add Products primary filter
 function Up_Image_Profile(e) {
@@ -33,7 +33,7 @@ function Up_Image_Profile(e) {
         reader.readAsDataURL(input.files[0]);
 
         const TimeNone = setTimeout(function () {
-            progressOne.style.display = 'none';
+            // progressOne.style.display = 'none';
             AddProducts.style.display = 'block';
             console.log(TimeNone);
         }, 3000);
@@ -70,28 +70,28 @@ document.getElementById('myForm').addEventListener('click', function (event) {
             alert("Id inavlid")
             return;
         }
-        axios.get(`https://render-delcamp.onrender.com/campesinos/${newUserId}`)
-            .then((EmpaqueUser_Id) => {
-                axios.post(`https://render-delcamp.onrender.com/campesinos/${newUserId}`, {
-                    ...EmpaqueUser_Id.data,
-                    producto_disponible:
-                        [
-                            {
-                                nombre_producto: nombreProductoValue,
-                                descripcion: descripcionProductoValue,  
-                                calidad_producto: calidadProductoValue,
-                                precio: precioProductoValue,
-                            }
-                        ]
-                }).then((SendData) => {
-                    console.log("Send Data Satisfactorily", SendData.data);
-                }).catch((ErrorSend) => {
-                    console.error("Error in the Sentd Data ", ErrorSend.message)
-                })
-            })
-            .catch((ErrorEmpaque) => {
-                console.error("Error al desenpacar el contenido del Usuario con la id: " + newUserId + ": " + ErrorEmpaque.message);
-            })
+        // axios.get(`https://render-delcamp.onrender.com/campesinos/${newUserId}`)
+        //     .then((EmpaqueUser_Id) => {
+        //         axios.post(`https://render-delcamp.onrender.com/campesinos/${newUserId}`, {
+        //             ...EmpaqueUser_Id.data,
+        //             producto_disponible:
+        //                 [
+        //                     {
+        //                         nombre_producto: nombreProductoValue,
+        //                         descripcion: descripcionProductoValue,  
+        //                         calidad_producto: calidadProductoValue,
+        //                         precio: precioProductoValue,
+        //                     }
+        //                 ]
+        //         }).then((SendData) => {
+        //             console.log("Send Data Satisfactorily", SendData.data);
+        //         }).catch((ErrorSend) => {
+        //             console.error("Error in the Sentd Data ", ErrorSend.message)
+        //         })
+        //     })
+        //     .catch((ErrorEmpaque) => {
+        //         console.error("Error al desenpacar el contenido del Usuario con la id: " + newUserId + ": " + ErrorEmpaque.message);
+        //     })
 
     } else {
         console.log('Todos los campos deben estar llenos');
