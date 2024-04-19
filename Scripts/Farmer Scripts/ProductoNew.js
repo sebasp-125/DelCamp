@@ -1,23 +1,4 @@
 
-console.log('--------------');
-// Message the warning cancel operation the register
-document.getElementById('CancellUp_Profile').addEventListener('click', function () {
-    let warningElement = document.createElement('p');
-    warningElement.textContent = 'Cancelaste el Registro de tu cuenta...';
-    warningElement.classList.add('WarningOperation');
-
-    let confirmCancelElement = document.getElementById('ConfirmCancel');
-    confirmCancelElement.innerHTML = '';
-    confirmCancelElement.appendChild(warningElement);
-
-    setTimeout(function () {
-        window.location.href = '../../Components/LoginRegister-Farmer/Register-Farmer.html';
-    }, 3000);
-});
-
-//Remove second filter
-progressOne.style.display = 'flex';
-
 //Add Products primary filter
 function Up_Image_Profile(e) {
     let input = document.getElementById('inputGroupFile02'),
@@ -54,7 +35,7 @@ function AddProduct() {
 }
 
 //Add Products the Api
-document.getElementById('myForm').addEventListener('click', function (event) {
+document.getElementById('myForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     const nombreProductoValue = document.getElementById('NombreProducto').value;
@@ -67,34 +48,43 @@ document.getElementById('myForm').addEventListener('click', function (event) {
         const params = new URLSearchParams(window.location.search);
         const newUserId = params.get('NewUserId');
         if (!newUserId) {
-            alert("Id inavlid")
+            alert("Id inválida");
             return;
         }
-        axios.get(`https://render-delcamp.onrender.com/campesinos/${newUserId}`)
-            .then((EmpaqueUser_Id) => {
-                axios.post(`https://render-delcamp.onrender.com/campesinos/${newUserId}`, {
-                    ...EmpaqueUser_Id.data,
-                    producto_disponible:
-                        [
-                            {
-                                nombre_producto: nombreProductoValue,
-                                descripcion: descripcionProductoValue,  
-                                calidad_producto: calidadProductoValue,
-                                precio: precioProductoValue,
-                            }
-                        ]
-                }).then((SendData) => {
-                    console.log("Send Data Satisfactorily", SendData.data);
-                }).catch((ErrorSend) => {
-                    console.error("Error in the Sentd Data ", ErrorSend.message)
-                })
-            })
-            .catch((ErrorEmpaque) => {
-                console.error("Error al desenpacar el contenido del Usuario con la id: " + newUserId + ": " + ErrorEmpaque.message);
-            })
 
+        // Crear un objeto con los datos del producto
+        const producto = {
+            nombre_producto: nombreProductoValue,
+            descripcion: descripcionProductoValue,
+            calidad_producto: calidadProductoValue,
+            precio: precioProductoValue,
+        };
+
+        // Realizar la solicitud GET para obtener los datos del usuario
+        axios.get(`https://render-delcamp.onrender.com/campesinos/${newUserId}`)
+            .then((response) => {
+                const userData = response.data;
+
+                userData.producto_disponible = userData.producto_disponible || [];
+                userData.producto_disponible.push(producto);
+
+                axios.post(`https://render-delcamp.onrender.com/campesinos/`, userData)
+                    .then((response) => {
+                        console.log("Datos enviados con éxito:", response.data);
+                        alert("Datos enviados con éxito");
+                    })
+                    .catch((error) => {
+                        console.error("Error al enviar los datos:", error);
+                        alert("Error al enviar los datos");
+                    });
+            })
+            .catch((error) => {
+                console.error("Error al obtener los datos del usuario:", error);
+                alert("Error al obtener los datos del usuario");
+            });
     } else {
         console.log('Todos los campos deben estar llenos');
+        alert('Todos los campos deben estar llenos');
     }
 });
 
