@@ -26,7 +26,6 @@ try {
             `;
                 cantidadProductos++;
             });
-
             ofertas.style.width = `${280 * cantidadProductos}px`;
         });
 } catch (error) {
@@ -34,28 +33,27 @@ try {
     ofertas.removeChild(mensajeCargando);
 }
 let comprasContador = 0;
+
+// Obtiene una referencia al elemento AdverCompra una sola vez
+const AdverCompra = document.getElementById('AdverCompra');
+
 function Icon(id) {
-    const carritoIncremental = document.getElementById('carritoIncremental')
-    AdverCompra = document.getElementById('AdverCompra')
+    const carritoIncremental = document.getElementById('carritoIncremental');
 
     console.log("Id de esa verdura..", id);
     if (id) {
         let TimeActual = new Date()
         comprasContador++;
+        AdverCompra.innerHTML = `
+            <div class="alert alert-primary" role="alert">
+                <p>Total de compras: ${comprasContador} </p>
+                <h6>Identificación producto: ${id} </h6>
+            </div>
+        `;
 
-        AdverCompra.innerHTML += `
-        <div class="ContentAdv">
-        <h3>Haz realizado ${comprasContador} compras</h3>
-        <p>Producto identificado con id ${id}</p>
-        <p><strong>${TimeActual}</strong></p>
-        </div>
-        `
         setTimeout(function () {
-            let AdverCompra = document.getElementById('AdverCompra')
-            if (AdverCompra) {
-                AdverCompra.remove()
-            }
-        }, 5000)
+            AdverCompra.innerHTML = '';
+        }, 5000);
     }
     carritoIncremental.textContent = `Carrito ${comprasContador}`;
 }

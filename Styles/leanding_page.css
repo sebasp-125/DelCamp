@@ -11,7 +11,7 @@ body{
 .narvar{
     width: 100%;
     height: 50px;
-    color: black;
+    color: black !important;
     display: flex;
     justify-content: end;
 }
@@ -76,7 +76,6 @@ body{
         top: 20px;
     } 
     white-space: normal; 
-    
 }
 
 .producto{
@@ -88,14 +87,14 @@ body{
     flex-direction: column;
     position: relative;
    
-  
+
 }
 
 .foto_producto{
     width: 100%;
     height: 60%;
     img{
-        width: 80%;
+        width: 70%;
         height: 80%;
         margin: 20% 10% 10% 10%;
     }
@@ -145,13 +144,11 @@ footer{
 }
 /* MENASJE DE ADVERTENCIA DESPUES DE HACER ALGUNA COMPRA */
 
-.ContentAdv {
+.alert.alert-primary {
     font-size: 15px;
-    background-color: red;
     float: right;
     position: fixed;
     z-index: 1;
     padding: 10px;
-    border-radius: 20px;
     margin-left: 20px;
 }
