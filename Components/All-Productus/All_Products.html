@@ -44,9 +44,9 @@
                 products.forEach((printpro) => {
                     let AllProductsContainer = document.getElementById("AllProducts");
                     AllProductsContainer.innerHTML += `
-            <img width="200px" src="${printpro.foto}" alt="${printpro.id}" />
-            <h1>${printpro.nombre_producto}</h1>
-            <h3>${printpro.descripcion}</h3>
+            <img width="200px" src="${printpro.foto}" alt="${printpro.id}" /><br>
+            <h1>${printpro.nombre_producto}</h1><br>
+            <h3>${printpro.descripcion}</h3><br>
             <h4><strong>${printpro.precio}</strong></h4>
             `
                 })

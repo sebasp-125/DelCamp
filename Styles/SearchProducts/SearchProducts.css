@@ -22,12 +22,10 @@ body {
         background: rgb(82, 101, 150);
     }
 
-    /* Primer fotograma */
     to {
         background: rgb(95, 154, 95);
     }
 
-    /* Segundo y último fotograma */
 }
 
 .border h1 {
@@ -64,19 +62,16 @@ button:hover {
 }
 
 #AllProducts {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(10px, 100fr));
+ }
+ 
+ #AllProducts h1,
+ #AllProducts h3,
+ #AllProducts h4 {
+     display: flex;
+    flex-direction: column;
 
-#AllProducts img {
-    border: 1px solid #ccc;
-    float: 1 0 0;
-}
-
-#AllProducts h1,
-#AllProducts h3,
-#AllProducts h4 {
-    margin: 5px 0;
-}
+ }
+ 
