@@ -32,6 +32,55 @@ try {
     console.log('Error al cargar el producto', error);
     ofertas.removeChild(mensajeCargando);
 }
+// traslacion de productos
+let contador_traslacion = 0;
+let total_productos = 305 * cantidadProductos
+const trasladar_derecha = () => {   
+        contador_traslacion = contador_traslacion + 1220;
+        if (contador_traslacion <= total_productos){
+            ofertas.style.transform = `translate(${contador_traslacion}px)`
+            console.log(contador_traslacion);
+        }
+        
+}
+const trasladar_izquierda = () => {
+        if (contador_traslacion <= total_productos && contador_traslacion >=0){
+            contador_traslacion = contador_traslacion - 1220;
+            ofertas.style.transform = `translate(-${contador_traslacion}px)`
+            console.log(contador_traslacion);
+        } 
+         
+        
+}
+
+
+const traslacion_btn_izquierdo = document.getElementById('traslacion_btn_izquierdo')
+const traslacion_btn_derecho = document.getElementById('traslacion_btn_derecho')
+
+traslacion_btn_izquierdo.addEventListener('click',trasladar_izquierda)   
+traslacion_btn_derecho.addEventListener('click',trasladar_derecha)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let comprasContador = 0;
 
 // Obtiene una referencia al elemento AdverCompra una sola vez
