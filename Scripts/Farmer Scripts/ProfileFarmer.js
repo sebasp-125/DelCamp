@@ -8,13 +8,13 @@ try {
         .then((ParametersId) => {
             contentProfile_Farmer.innerHTML += `
             <div class="content-profile">
-            <img class="ProfileFarmer" src="https://orienteseperiodismodeopinion.com/id-cms/wp-content/uploads/2021/07/Campesino.jpg" alt="Image the Farmer" width="300px" />
+            <img class="ProfileFarmer" src="${ParametersId.data.foto}" alt="Image the Farmer" width="300px" />
             <h1>Correo: ${ParametersId.data.correo}</h1>
             <h1>Finca: ${ParametersId.data.nombre_finca}</h1>
             <h1>Ubicacion: ${ParametersId.data.ubicacion_finca}</h1>
             <a href="#">Telefono: ${ParametersId.data.telefono}</a>
             </div>`;
-            
+           
             ParametersId.data.productos_disponibles.forEach(Stock => {
                 ProductosStack_availables.innerHTML += `
                     <img src=${Stock.foto} alt="Product Stack Farmer" width="300px" />
