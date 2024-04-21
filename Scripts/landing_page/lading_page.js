@@ -5,82 +5,73 @@ mensajeCargando.textContent = 'Cargando productos...';
 ofertas.appendChild(mensajeCargando);
 
 let cantidadProductos = 0;
-try {
-    axios.get('https://render-delcamp.onrender.com/productos')
-        .then((product) => {
-            console.log(product.data);
-            ofertas.removeChild(mensajeCargando);
-            product.data.forEach(element => {
-                ofertas.innerHTML += `
-                <div class="producto">
-                    <div class="descuento"><p>${element.discount}</p></div>
-                    <div class="foto_producto"><img src="${element.foto}" alt=""></div>
-                    <div class="informacion_producto">
-                        <div>
-                            <p><b>${element.precio}</b></p><br>
-                            <p>${element.nombre_producto}</p>
+function tryS() {
+    return new Promise((resolve) => {
+        try {
+            axios.get('https://render-delcamp.onrender.com/productos')
+                .then((product) => {
+                    console.log(product.data);
+                    ofertas.removeChild(mensajeCargando);
+                    product.data.forEach(element => {
+                        ofertas.innerHTML += `
+                        <div class="producto">
+                            <div class="descuento"><p>${element.discount}</p></div>
+                            <div class="foto_producto"><img src="${element.foto}" alt=""></div>
+                            <div class="informacion_producto">
+                                <div>
+                                    <p><b>${element.precio}</b></p><br>
+                                    <p>${element.nombre_producto}</p>
+                                </div>
+                                <button onclick="Icon(${element.id_producto})">Agregar</button>
+                            </div>
                         </div>
-                        <button onclick="Icon(${element.id_producto})">Agregar</button>
-                    </div>
-                </div>
-            `;
-                cantidadProductos++;
-            });
-            ofertas.style.width = `${280 * cantidadProductos}px`;
-        });
-} catch (error) {
-    console.log('Error al cargar el producto', error);
-    ofertas.removeChild(mensajeCargando);
-}
-// traslacion de productos
-let contador_traslacion = 0;
-let total_productos = 305 * cantidadProductos
-const trasladar_derecha = () => {   
-        contador_traslacion = contador_traslacion + 1220;
-        if (contador_traslacion <= total_productos){
-            ofertas.style.transform = `translate(${contador_traslacion}px)`
-            console.log(contador_traslacion);
+                    `;
+                        cantidadProductos++;
+                    });
+                    resolve({ CANTIDAD: cantidadProductos });
+                    ofertas.style.width = `${280 * cantidadProductos}px`;
+                });
+
+        } catch (error) {
+            console.log('Error al cargar el producto', error);
+            ofertas.removeChild(mensajeCargando);
         }
-        
-}
-const trasladar_izquierda = () => {
-        if (contador_traslacion <= total_productos && contador_traslacion >=0){
-            contador_traslacion = contador_traslacion - 1220;
-            ofertas.style.transform = `translate(-${contador_traslacion}px)`
-            console.log(contador_traslacion);
-        } 
-         
-        
+    })
 }
 
+function epass() {
+    tryS().then((success) => {
+        console.log(success);
+        let epa = success.CANTIDAD
+        console.log("Object ", epa);
+        // traslacion de productos
+        let contador_traslacion = 0;
+        let total_productos = 305 * cantidadProductos
+        const trasladar_derecha = () => {
+            contador_traslacion = contador_traslacion + 1220;
+            if (contador_traslacion <= total_productos) {
+                ofertas.style.transform = `translate(${contador_traslacion}px)`
+                console.log(contador_traslacion);
+            }
 
-const traslacion_btn_izquierdo = document.getElementById('traslacion_btn_izquierdo')
-const traslacion_btn_derecho = document.getElementById('traslacion_btn_derecho')
+        }
+        const trasladar_izquierda = () => {
+            if (contador_traslacion <= total_productos && contador_traslacion >= 0) {
+                contador_traslacion = contador_traslacion - 1220;
+                ofertas.style.transform = `translate(-${contador_traslacion}px)`
+                console.log(contador_traslacion);
+            }
+        }
 
-traslacion_btn_izquierdo.addEventListener('click',trasladar_izquierda)   
-traslacion_btn_derecho.addEventListener('click',trasladar_derecha)
+        const traslacion_btn_izquierdo = document.getElementById('traslacion_btn_izquierdo')
+        const traslacion_btn_derecho = document.getElementById('traslacion_btn_derecho')
 
+        traslacion_btn_izquierdo.addEventListener('click', trasladar_izquierda)
+        traslacion_btn_derecho.addEventListener('click', trasladar_derecha)
+    })
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+epass()
 let comprasContador = 0;
 
 // Obtiene una referencia al elemento AdverCompra una sola vez
