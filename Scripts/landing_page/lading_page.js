@@ -37,8 +37,8 @@ function tryS() {
             ofertas.removeChild(mensajeCargando);
         }
     })
-
 }
+
 function epass() {
     tryS().then((success) => {
         console.log(success);
