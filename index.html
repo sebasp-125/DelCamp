@@ -18,13 +18,7 @@
         <div class="imagen_carrusel">
             <img src="..\imagenes\Agro_-_colombia.png">
         </div>
-        <div class="inform_vendedor">
-            <img src="..\imagenes\abuelosebas.jpg">
-            <p><b>Campesino:</b></p>
-            <p><b>Ventas:</b></p>
-            <p><b>Vendedor al por mayor:</b></p>
-            <button>Contactar a</button>
-        </div>
+       
         <div class="productos_comprados">
             <h1>Productos Comprados</h1>
             <hr>
@@ -126,7 +120,7 @@
                 y tratamiento de datos de Delcamp
                 </h1>
             </div>
-            <button><img class="compras"src="..\imagenes\carrito-de-compras.png">Pagar</button>
+            <a href="pasarela.html" target="_blank"><button><img class="compras"src="..\imagenes\carrito-de-compras.png">Pagar</button></a>
         </div>
     </section>
     <section class="second">
@@ -136,9 +130,15 @@
             <img src="..\imagenes\derecha.jpg">
         </div>
         <div class="productos_final">
-            a
+            <div class="lista_productos">
+                <img src="..\imagenes\zanahorias.jpg">
+                <p><b>$25.8/kg</b><span>$29.9/kg</span></p>
+                <p>Zanahoría Extra</p>
+                <button>Agregar</button>
+            </div>
         </div>
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="productos_comprados.js"></script>
 </body>
 </html>
