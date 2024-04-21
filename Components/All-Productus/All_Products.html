@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>DelCamp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Styles/SearchProducts/SearchProducts.css">
+    <title>Todos los Productos</title>
+</head>
+
+<body>
+    <i id="Back" class="fa-solid fa-circle-arrow-left"></i>
+
+    <div class="border">
+        <h1>Buscar Productos</h1>
+    </div>
+
+    <div class="SearchInputDIV">
+        <input id="SearchInput" type="text" placeholder="Buscar Productos">
+    </div>
+    <button class="SearchBtn" onclick="PrintProducts()">Products</button>
+
+    <div id="AllProducts">
+
+    </div>
+
+    <script>
+        const Back = document.getElementById('Back').addEventListener('click', function () {
+            console.log("Yes");
+            window.history.back();
+        })
+        //me tira un error en la conexion del html con el js, revisar linea 24, Script src html
+
+        //Print all the products
+        function PrintProducts() {
+            AllProduct().then((Print) => {
+                let products = Print.AllProducts
+                products.forEach((printpro) => {
+                    let AllProductsContainer = document.getElementById("AllProducts");
+                    AllProductsContainer.innerHTML += `
+            <img width="200px" src="${printpro.foto}" alt="${printpro.id}" /><br>
+            <h1>${printpro.nombre_producto}</h1><br>
+            <h3>${printpro.descripcion}</h3><br>
+            <h4><strong>${printpro.precio}</strong></h4>
+            <button>Comprar</button>
+            `
+                })
+            })
+        }
+
+        function AllProduct() {
+            //Print mesagge de reload products
+            const mensajeCargando = document.createElement('div');
+            mensajeCargando.textContent = 'Cargando productos...';
+            document.getElementById("AllProducts").appendChild(mensajeCargando);
+
+            return axios.get('https://render-delcamp.onrender.com/productos')
+                .then((response) => {
+                    let AllProducts = document.getElementById("AllProducts");
+                    //Quitar mensaje cuando se resuleve la promesa
+                    AllProducts.removeChild(mensajeCargando);
+                    return { AllProducts: response.data };
+                })
+                .catch((error) => {
+                    console.error("Error, download products: ", error);
+                });
+        }
+
+        // Value for Input
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('SearchInput');
+            searchInput.addEventListener('input', function () {
+                AllProduct().then((result) => {
+                    let products = result.AllProducts;
+                    let valueInput = searchInput.value.toLowerCase();
+                    let filter = products.filter(product => {
+                        return product.nombre_producto.toLowerCase().includes(valueInput) || product.descripcion.toLowerCase().includes(valueInput);
+                    });
+
+                    // Vaciar el contenido del contenedor antes de agregar los productos filtrados
+                    let AllProductsContainer = document.getElementById("AllProducts");
+                    AllProductsContainer.innerHTML = '';
+                    filter.forEach(Search => {
+                        AllProductsContainer.innerHTML += `
+                <img width="200px" src="${Search.foto}" alt="${Search.id}" />
+                <h1>${Search.nombre_producto}</h1>
+                <h3>${Search.descripcion}</h3>
+                <h4><strong>${Search.precio}</strong></h4>
+            <button>Comprar</button>
+                `;
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
