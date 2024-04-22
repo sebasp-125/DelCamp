@@ -20,21 +20,20 @@
         <h1>Buscar Productos</h1>
     </div>
 
-    <label for="">Buscar productos</label><br>
-    <input id="SearchInput" type="text" placeholder="Buscar Productos">
-    <button onclick="PrintProducts()">Products</button>
+    <div class="SearchInputDIV">
+        <input id="SearchInput" type="text" placeholder="Buscar Productos">
+    </div>
+    <button class="SearchBtn" onclick="PrintProducts()">Products</button>
 
     <div id="AllProducts">
 
     </div>
 
-    <!-- <script src="../../Scripts/AllScript/AllProductsScript.js"></script> -->
     <script>
         const Back = document.getElementById('Back').addEventListener('click', function () {
             console.log("Yes");
             window.history.back();
         })
-
         //me tira un error en la conexion del html con el js, revisar linea 24, Script src html
 
         //Print all the products
