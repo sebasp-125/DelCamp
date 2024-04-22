@@ -1,3 +1,12 @@
+tipoUsuario.addEventListener("change", function() {
+    let userType = this.value;
+    console.log(userType);
+
+    if (userType == "buyer") {
+        window.location.href = "../LoginRegister-Farmer/Login-Farmer.html"
+    }
+})
+
 document.querySelector('form').addEventListener('submit', function(event){
     event.preventDefault()
 
@@ -13,14 +22,12 @@ let campoContraseña = document.getElementById('campoContraseña').value;
             if(element.Correo==campoCorreo && element.Contraseña==campoContraseña){
                 console.log('Ingresaste')
                 flag = true
+                window.location.href = '/Components/NewProductoFarmer/ProductoNew.html'
             }
             if(!flag){
                 console.log('No ingresaste')
             }
         });
-        console.log(dataPost.data)
-        console.log(dataPost.contraseña)
-        console.log(dataPost.correo)
     })
     .catch((epa) => {
         console.log("Error " , epa)

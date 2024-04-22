@@ -1,5 +1,13 @@
+tipoUsuario.addEventListener("change", function() {
+    let userType = this.value;
+    console.log(userType);
 
-document.querySelector('form').addEventListener('submit', function(event){
+    if (userType == "buyer") {
+        window.location.href = "../LoginRegister-Farmer/Register-Farmer.html"
+    }
+})
+let formulario = document.querySelector('form')
+formulario.addEventListener('submit', function(event){
     event.preventDefault()
 
 let campoNombre = document.getElementById('campoNombre').value;
@@ -24,13 +32,4 @@ let tipoUsuario = document.getElementById('user-type')
         console.log("Error " , epa)
     })
     
-
-tipoUsuario.addEventListener("change", function() {
-    let userType = this.value;
-    console.log(userType);
-
-    if (userType == "buyer") {
-        window.location.href = "../LoginRegister-Farmer/Register-Farmer.html"
-    }
-})
 })
