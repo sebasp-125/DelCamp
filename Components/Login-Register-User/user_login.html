@@ -14,16 +14,16 @@
         <h2>Inicio de Sesión</h2>
         <form class="user-form">
             <label for="user-type">Tipo de usuario</label>
-                <select class="user-type" id="user-type">
-                    <option disabled selected value="0">Tipo de usuario</option>
-                    <option value="buyer">Campesino</option>
-                    <option value="seller">Comprador</option>
-                </select>
-                <label for="user-lastname">Correo electrónico</label>
-                <input class="user-name" type="email" placeholder="Ejemplo@gmail.com">
-    
-                <label for="user-lastname">Contraseña</label>
-                <input class="user-name" type="password" placeholder="********">
+            <select id="tipoUsuario" class="user-type" id="user-type">
+                <option disabled selected value="0">Tipo de usuario</option>
+                <option value="buyer">Campesino</option>
+                <option value="seller">Comprador</option>
+            </select>
+            <label for="user-email">Correo electrónico</label>
+            <input id="campoCorreo" class="user-email" type="email" placeholder="Ejemplo@gmail.com">
+
+            <label for="user-password">Contraseña</label>
+            <input id="campoContraseña" class="user-password" type="password" placeholder="********">
             
             <button class="btn-register" type="submit">Iniciar Sesión</button>
             <p>¿Aun no tienes una cuenta? <a href="/Components/Login-Register-User/user_register.html">Registrate</a></p>
@@ -31,5 +31,7 @@
 
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Scripts/User Scripts/UserLogin.js"></script>
 </body>
 </html>
