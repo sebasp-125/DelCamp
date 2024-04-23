@@ -33,52 +33,9 @@
             </p>
             <p>Olvidaste tu contraseña? <a href="/Components/Login-Register-User/user_register.html">Recuperar
                     Contraseña</a></p>
-
         </form>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-    <script>
-        document.getElementById("Back").addEventListener("click", function () {
-            window.history.back();
-        });
-
-        document.getElementById("user_type").addEventListener("change", function () {
-            let userType = this.value;
-            console.log(userType);
-            if (userType == "buyer") {
-                window.location.href = "../LoginRegister-Farmer/Login-Farmer.html";
-            }
-        });
-
-        //Verification Use
-        document.querySelector('form').addEventListener('submit', function (event) {
-            console.log("Entro");
-            event.preventDefault()
-
-            let campoCorreo = document.getElementById('campoCorreo').value;
-            let campoContraseña = document.getElementById('campoContraseña').value;
-
-            axios.get('https://render-delcamp.onrender.com/clientes')
-                .then((dataPost) => {
-                    let flag = false
-                    dataPost.data.forEach(element => {
-                        if (element.Correo == campoCorreo && element.Contraseña == campoContraseña) {
-                            console.log('Ingresaste')
-                            flag = true
-                            window.location.href = '/Components/NewProductoFarmer/ProductoNew.html'
-                        }
-                        if (!flag) {
-                            console.log('No ingresaste')
-                        }
-                    });
-                })
-                .catch((epa) => {
-                    console.log("Error ", epa)
-                })
-
-        })
-    </script>
+    <script src="/Components/Login-Register-User/scriptLogin.js"></script>
 </body>
-
 </html>

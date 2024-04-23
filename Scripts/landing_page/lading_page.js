@@ -10,8 +10,6 @@ function tryS() {
         try {
             axios.get('https://render-delcamp.onrender.com/productos')
                 .then((product) => {
-                    console.log(product.data);
-                    ofertas.removeChild(mensajeCargando);
                     product.data.forEach(element => {
                         ofertas.innerHTML += `
                         <div class="producto">
@@ -28,7 +26,7 @@ function tryS() {
                     `;
                         cantidadProductos++;
                     });
-                    resolve({ CANTIDAD: cantidadProductos });
+                    resolve({ CANTIDAD: cantidadProductos, DATT: product.data });
                     ofertas.style.width = `${280 * cantidadProductos}px`;
                 });
 
@@ -43,7 +41,6 @@ function epass() {
     tryS().then((success) => {
         console.log(success);
         let epa = success.CANTIDAD
-        console.log("Object ", epa);
         // traslacion de productos
         let contador_traslacion = 0;
         let total_productos = 305 * cantidadProductos
@@ -70,7 +67,6 @@ function epass() {
         traslacion_btn_derecho.addEventListener('click', trasladar_derecha)
     })
 }
-
 epass()
 let comprasContador = 0;
 
@@ -97,3 +93,19 @@ function Icon(id) {
     }
     carritoIncremental.textContent = `Carrito ${comprasContador}`;
 }
+
+
+//Profile User
+function ProfileUser(event) {
+    let BajarId = new URLSearchParams(window.location.search);
+    const ValidationId = BajarId.get('IdUserLogin')
+    !ValidationId ? console.error("No hay Id ", error) : undefined;
+    axios.get(`https://render-delcamp.onrender.com/clientes/${ValidationId}`)
+        .then((Clientes) => {
+            Clientes ? window.location.href = '/Components/PerfilUser.html' : alert("error");
+        })
+        .cath((ErrorUser) => {
+            console.error("Error", ErrorUser);
+        })
+}
+document.getElementById("ImageProfile").addEventListener("click", ProfileUser())
