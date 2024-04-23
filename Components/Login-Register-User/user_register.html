@@ -18,10 +18,10 @@
         <h2>Registro</h2>
         <form class="user-form">
             <label for="user-name">Nombre</label>
-            <input class="user-name" type="text" placeholder="@Pepito">
+            <input class="user-name" type="text" id="campoNombre" placeholder="@Pepito">
 
             <label for="user-lastname">Apellido</label>
-            <input class="user-name" type="text" placeholder="@Pérez Pérez">
+            <input class="user-name" type="text" id="campoApellido" placeholder="@Pérez Pérez">
 
             <label for="user-type">Tipo de usuario</label>
             <select class="user-type" id="user_type">
@@ -30,10 +30,10 @@
                 <option value="seller">Comprador</option>
             </select>
             <label for="user-email">Correo electrónico</label>
-            <input class="user-email" type="email" placeholder="Ejemplo@gmail.com">
+            <input class="user-email" type="email" id="campoCorreo" placeholder="Ejemplo@gmail.com">
 
             <label for="user-password">Contraseña</label>
-            <input class="user-password" type="password" placeholder="********">
+            <input class="user-password" type="password" id="campoContraseña" placeholder="********">
 
             <div class="terms-conditions">
                 <label for="terms-conditions">Aceptar términos y condiciones</label>
@@ -52,7 +52,7 @@
             <button class="btn-cancel" type="reset">Cancelar</button>
         </form>
     </div>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script>
         document.getElementById("Volver").addEventListener("click", function () {
@@ -63,10 +63,36 @@
             console.log(userType);
             if (userType == "buyer") {
                 window.location.href = "../LoginRegister-Farmer/Register-Farmer.html";
-            } else if (userType == "seller") {
-                window.location.href = "//Components/Login-Register-User/user_register.html";
             }
         });
+
+   
+        let formulario = document.querySelector('form')
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault()
+
+            let campoNombre = document.getElementById('campoNombre').value;
+            let campoApellido = document.getElementById('campoApellido').value;
+            let campoCorreo = document.getElementById('campoCorreo').value;
+            let campoContraseña = document.getElementById('campoContraseña').value;
+            let botonRegistro = document.getElementById('bot    onRegistro');
+            let tipoUsuario = document.getElementById('user-type')
+
+            axios.post('https://render-delcamp.onrender.com/clientes',
+                {
+                    id: Math.floor(Math.random() * 100) + 1,
+                    nombre: campoNombre,
+                    apellido: campoApellido,
+                    Correo: campoCorreo,
+                    Contraseña: campoContraseña
+                })
+                .then((dataPost) => {
+                    console.log(dataPost.data)
+                })
+                .catch((epa) => {
+                    console.log("Error ", epa)
+                })
+        })
     </script>
 </body>
 
