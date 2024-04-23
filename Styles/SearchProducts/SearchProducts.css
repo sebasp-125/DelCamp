@@ -1,76 +1,75 @@
-/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    flex-direction: column;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.border {
-    width: 80%;
-    margin: 20px auto;
-    padding: 10px;
-    border: 3px solid red;
-    border-top: 5px solid blue;
-    border-radius: 20px;
-    text-align: center;
-    animation: change-color 1.5s linear infinite;
-
+.SearchInputDIV {
+    display: flex;
+    justify-content: center;
 }
 
-@keyframes change-color {
-    from {
-        background: rgb(82, 101, 150);
-    }
-
-    to {
-        background: rgb(95, 154, 95);
-    }
-
-}
-
-.border h1 {
-    margin: 0;
-}
-
-label {
-    display: block;
-    margin-top: 20px;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+#SearchInput {
+    border: 1px solid black;
     border-radius: 5px;
-    margin-top: 5px;
+    width: 100%;
+    padding: 20px;
 }
 
-button{
-    padding: 10px 20px;
-    font-size: 16px;
+#SearchInput:focus {
+    outline: none;
+}
+
+.SearchBtn {
+    background-color: rgb(53, 200, 53);
+    margin-left: 20px;
+    width: 100%;
+    opacity: 0.83;
     border: none;
-    background-color: #007bff;
-    color: #fff;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
 }
 
 #AllProducts {
+    margin-top:20px ;
     display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(150px , 10fr));
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.Shopping {
+    background-color: rgb(53, 200, 53);
+    margin-left: 20px;
+    opacity: 0.83;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.product {
+    flex-direction: column;
+    margin-bottom: 20px; 
+}
+
+.info {
+    margin-bottom: 10px;
+}
+
+.product img {
     width: 100%;
- }
- 
- #AllProducts h1,
- #AllProducts h3,
- #AllProducts h4 {
-   position: relative;
- }
- 
+    height: auto;
+}
+
+label {
+    opacity: 0.33;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}

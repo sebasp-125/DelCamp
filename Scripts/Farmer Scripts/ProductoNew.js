@@ -24,7 +24,7 @@ const EnviarALL = document.getElementById('EnviarALL').addEventListener('click',
 
     AddProduct(function (imageURL) {
         const campos = {
-            id: Math.floor(Math.random() * 100) + 1,
+            id_producto: Math.floor(Math.random() * 100) + 1,
             nombre_producto: names,
             descripcion: description,
             category: category,
