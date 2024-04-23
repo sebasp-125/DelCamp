@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DelCamp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Styles/uRegister_style.css">
+</head>
+
+<body>
+    <i id="Back" class="fa-solid fa-circle-arrow-left"></i>
+    <div class="container">
+        <i class="fa-solid fa-user"></i>
+        <h2>Inicio de Sesión</h2>
+        <form class="user-form">
+            <label for="user-type">Tipo de usuario</label>
+            <select class="user-type" id="user_type">
+                <option disabled selected value="0">Tipo de usuario</option>
+                <option value="buyer">Campesino</option>
+            </select>
+            <label for="user-lastname">Correo electrónico</label>
+            <input class="user-name" type="email" id="campoCorreo"  placeholder="Ejemplo@gmail.com">
+
+            <label for="user-lastname">Contraseña</label>
+            <input class="user-name" type="password"  id="campoContraseña" placeholder="********">
+
+            <button class="btn-register" type="submit">Iniciar Sesión</button>
+            <p>¿Aun no tienes una cuenta? <a href="/Components/Login-Register-User/user_register.html">Registrate</a>
+            </p>
+            <p>Olvidaste tu contraseña? <a href="/Components/Login-Register-User/user_register.html">Recuperar
+                    Contraseña</a></p>
+
+        </form>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        document.getElementById("Back").addEventListener("click", function () {
+            window.history.back();
+        });
+
+        document.getElementById("user_type").addEventListener("change", function () {
+            let userType = this.value;
+            console.log(userType);
+            if (userType == "buyer") {
+                window.location.href = "../LoginRegister-Farmer/Login-Farmer.html";
+            }
+        });
+
+        //Verification Use
+        document.querySelector('form').addEventListener('submit', function (event) {
+            console.log("Entro");
+            event.preventDefault()
+
+            let campoCorreo = document.getElementById('campoCorreo').value;
+            let campoContraseña = document.getElementById('campoContraseña').value;
+
+            axios.get('https://render-delcamp.onrender.com/clientes')
+                .then((dataPost) => {
+                    let flag = false
+                    dataPost.data.forEach(element => {
+                        if (element.Correo == campoCorreo && element.Contraseña == campoContraseña) {
+                            console.log('Ingresaste')
+                            flag = true
+                            window.location.href = '/Components/NewProductoFarmer/ProductoNew.html'
+                        }
+                        if (!flag) {
+                            console.log('No ingresaste')
+                        }
+                    });
+                })
+                .catch((epa) => {
+                    console.log("Error ", epa)
+                })
+
+        })
+    </script>
+</body>
+
+</html>
