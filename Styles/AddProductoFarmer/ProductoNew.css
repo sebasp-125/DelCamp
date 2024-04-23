@@ -1,7 +1,57 @@
-/* Cancel  Operation Add Image Profile JS */
-.WarningOperation {
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 0px;
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.slogan {
+    font-size: 18px;
+    color: #333;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+}
+
+.input-group-text {
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+}
+
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+}
+
+#AddProducts {
+    padding: 20px;
+}
+
+h1 {
+    color: #fff;
+}
+
+
+.card-body {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.card-body p {
+    margin-bottom: 20px;
 }

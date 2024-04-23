@@ -1,55 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DelCamp</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/Styles/uRegister_style.css">
 </head>
+
 <body>
-    <i id="icono1" class="fa-solid fa-circle-arrow-left"></i>
-    <div id="container" class="container">
-        <i id="icono2" class="fa-solid fa-user"></i>
         <h2>Registro</h2>
         <form id="userForm" class="user-form">
             <label for="user-name">Nombre</label>
             <input id="campoNombre" class="user-name" type="text" placeholder="@Pepito">
-
             <label for="user-lastname">Apellido</label>
-            <input id="campoApellido" class="user-lastname" type="text" placeholder="@Pérez Pérez">
-            
-            <label for="user-type">Tipo de usuario</label>
-                <select id="tipoUsuario" class="user-type" id="user-type">
-                    <option disabled selected value="0">Tipo de usuario</option>
-                    <option value="buyer">Campesino</option>
-                    <option value="seller">Comprador</option>
-                </select>
-                <label for="user-email">Correo electrónico</label>
-                <input id="campoCorreo" class="user-email" type="email" placeholder="Ejemplo@gmail.com">
-    
-                <label for="user-password">Contraseña</label>
-                <input id="campoContraseña" class="user-password" type="password" placeholder="********">
-            <div id="termsConditions" class="terms-conditions">
-                <label for="terms-conditions">Aceptar términos y condiciones</label>
-                <input id="checkboxTérminos" type="checkbox" required/>
+
             </div>
             <div id="notifications" class="notifications">
                 <label for="notifications">Notificaciones</label>
-                <input id="checkboxNotificaciones" type="checkbox"/>
-            </div>
             <div id="directMessage" class="direct-message">
                 <label for="direct-message">Recibir mensajes directos</label>
-                <input id="checkboxMensajesDirectos" type="checkbox"/>
-            </div>
-            
-            <button id="botonRegistro" class="btn-register" type="submit">Registrar</button>
-            <button id="botonCancelar" class="btn-cancel" type="reset">Cancelar</button>
         </form>
         <p>¿Ya tienes una cuenta? <a href="/Components/Login-Register-User/user_login.html">Inicia Sesión</a></p>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="/Scripts/User Scripts/UserRegister.js"></script>
 </body>
+
 </html>
