@@ -19,6 +19,15 @@
         <h2>Inicio de Sesión</h2>
         <form class="user-form">
             <label for="user-type">Tipo de usuario</label>
+            <select class="user-type" id="user_type">
+                <option disabled selected value="0">Tipo de usuario</option>
+                <option value="buyer">Campesino</option>
+            </select>
+            <label for="user-lastname">Correo electrónico</label>
+            <input class="user-name" type="email" placeholder="Ejemplo@gmail.com">
+
+            <label for="user-lastname">Contraseña</label>
+            <input class="user-name" type="password" placeholder="********">
 
             <button class="btn-register" type="submit">Iniciar Sesión</button>
             <p>¿Aun no tienes una cuenta? <a href="/Components/Login-Register-User/user_register.html">Registrate</a>
@@ -28,6 +37,21 @@
 
         </form>
     </div>
+
+    <script>
+        document.getElementById("Back").addEventListener("click", function () {
+            window.history.back();
+        });
+    
+        document.getElementById("user_type").addEventListener("change", function () {
+            let userType = this.value;
+            console.log(userType);
+            if (userType == "buyer") {
+                window.location.href = "../LoginRegister-Farmer/Login-Farmer.html";
+            } 
+        });
+    </script>
+    
 
 </body>
 

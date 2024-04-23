@@ -41,8 +41,6 @@ label {
     display: block;
     margin-bottom: 5px;
 }
-
-.user-name, .user-lastname, .user-email, .user-password{
     width: 95%;
     padding: 8px;
     margin-bottom: 10px;
@@ -111,5 +109,5 @@ select {
 }
 
 .btn-cancel:hover {
-    border: 1px #08a652 solid;
+    border: 1px #0ac763 solid;
 }
