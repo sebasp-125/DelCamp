@@ -15,7 +15,7 @@ function tryS() {
                     product.data.forEach(element => {
                         ofertas.innerHTML += `
                         <div class="producto">
-                            <div class="descuento"><p>${element.discount}</p></div>
+                            <div class="descuento"><p>${element.discount}% DTO.</p></div>
                             <div class="foto_producto"><img src="${element.foto}" alt=""></div>
                             <div class="informacion_producto">
                                 <div>
