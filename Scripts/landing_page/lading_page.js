@@ -75,7 +75,6 @@ const AdverCompra = document.getElementById('AdverCompra');
 
 function Icon(id) {
     const carritoIncremental = document.getElementById('carritoIncremental');
-
     console.log("Id de esa verdura..", id);
     if (id) {
         let TimeActual = new Date()
@@ -94,18 +93,11 @@ function Icon(id) {
     carritoIncremental.textContent = `Carrito ${comprasContador}`;
 }
 
-
-//Profile User
-function ProfileUser(event) {
+//Enviar id USer Registrado
+document.getElementById('IMAGENPROFILE').addEventListener('click' , function(event){
+    event.preventDefault();
     let BajarId = new URLSearchParams(window.location.search);
-    const ValidationId = BajarId.get('IdUserLogin')
-    !ValidationId ? console.error("No hay Id ", error) : undefined;
-    axios.get(`https://render-delcamp.onrender.com/clientes/${ValidationId}`)
-        .then((Clientes) => {
-            Clientes ? window.location.href = '/Components/PerfilUser.html' : alert("error");
-        })
-        .cath((ErrorUser) => {
-            console.error("Error", ErrorUser);
-        })
-}
-document.getElementById("ImageProfile").addEventListener("click", ProfileUser())
+    let ValidationId = BajarId.get('IdUserLogin')
+    console.log(ValidationId);
+    window.location.href = "/Components/PerfilUser.html?IdUserLogin=" + ValidationId
+});
