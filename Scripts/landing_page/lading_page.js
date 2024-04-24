@@ -72,12 +72,10 @@ let comprasContador = 0;
 
 // Obtiene una referencia al elemento AdverCompra una sola vez
 const AdverCompra = document.getElementById('AdverCompra');
-
 function Icon(id) {
     const carritoIncremental = document.getElementById('carritoIncremental');
     console.log("Id de esa verdura..", id);
     if (id) {
-        let TimeActual = new Date()
         comprasContador++;
         AdverCompra.innerHTML = `
             <div class="alert alert-primary" role="alert">
@@ -85,7 +83,7 @@ function Icon(id) {
                 <h6>Identificación producto: ${id} </h6>
             </div>
         `;
-
+        window.location.href = '../../index.html?IdProduct=' + id;
         setTimeout(function () {
             AdverCompra.innerHTML = '';
         }, 5000);
