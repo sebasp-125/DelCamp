@@ -1,0 +1,226 @@
+body{
+    background-color: red;
+    margin: 0px;
+    padding:0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+header{
+    background-color: rgb(255, 255, 255);
+    width:100%; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+header > img{
+    width:2%;
+    height: 5%;
+    margin-top:4px;
+    margin-right: 25px;
+}
+header > h3{
+    margin: 0px 55px 0px 45px 
+}
+.first{
+    background-color: green;
+    width: 100%;
+    height: 200vh;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+.imagen_carrusel{
+    background-image: url(../imagenes/banner.jpg);
+    float: left;
+    width: 100%;
+    height: 16%;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.imagen_carrusel>img{
+    width: 10%;
+    border-radius: 100px;
+    position: relative;
+    left:5%
+}
+ .inform_vendedor>button:hover,.pagar>a>button:hover,.lista_productos>button:hover{
+    background-color: rgb(49, 164, 99);
+ }
+ .inform_vendedor>button:active,.pagar>a>button:active,.lista_productos>button:active{
+    background-color: rgb(33, 102, 63);
+ }
+.productos_comprados{
+    background-color: rgb(255, 255, 255);
+    float: right;
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.productos_comprados>h1{
+    font-size:70px;
+}
+.productos_comprados>hr{
+    border: 7px solid rgb(164, 241, 206);
+    width: 55%;
+    border-radius: 5px;
+    margin-top: -2%;
+    margin-bottom: 20%;
+}
+table{
+    border-collapse: collapse;
+    margin-top: -12%;
+}
+th,.two2>thead>tr>th{
+    font-size: 35px;
+}
+td{
+    width: 310px;
+    border:2px solid gray;
+    padding: 3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.programar_envio{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 100%;
+    height: 29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.envío_ok{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    left: -22%;
+    margin: 0px;
+}
+.envío_ok>h2{
+    font-size: 35px;
+}
+.envío_ok>img{
+    height: 55%;
+    margin-left: 20px;
+}
+.two2{
+    border-collapse: collapse;
+    margin-top:15px;
+}
+.two2>tbody>tr>td{
+    width: 250px;
+    border:2px solid gray;
+    padding: 3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.pagar{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parrafo{
+    background-color: rgb(255, 255, 255);
+    font-size: 25px;
+    width: 30%;
+    margin-right: 7%;
+    text-align: center;
+}
+.pagar>a{
+    text-decoration: none;
+    width: 20%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+.pagar>a>button{
+    display: flex;
+    height: 90%;
+    margin-right:-6%;
+    justify-content: center;
+    align-items: center;
+    color:white;  
+    background-color: rgb(54, 197, 116);
+    font-size: 35px;
+    border:none;
+    border-radius: 15px;
+}
+.compras{
+    width: 13%;
+    margin-right: 40px;
+}
+.second{
+    background-color: blue;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+}
+.titulo_productos{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titulo_productos>h2{
+    font-size: 300%;
+}
+.titulo_productos>img{
+    width: 30%;
+}
+.productos_final{
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.lista_productos{
+    margin-top: 2%;
+    display: flex;
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    height: 75%;
+}
+.lista_productos>img{
+    width: 90%;
+    border-radius: 100%;
+}
+.lista_productos>p{
+    font-size: 25px;
+    margin-top: 0px;
+}
+.lista_productos>p>span{
+    color:gray;
+    text-decoration: line-through;
+}
+.lista_productos>button{
+    margin-top:10px;
+    width: 90%;
+    height: 15%;
+    border: none;
+    border-radius:15px;
+    color:white;
+    font-size: 25px;
+    background-color: rgb(54, 197, 116);
+}
