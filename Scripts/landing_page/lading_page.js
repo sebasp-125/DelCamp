@@ -91,15 +91,12 @@ function Icon(id) {
     carritoIncremental.textContent = `Carrito ${comprasContador}`;
 }
 
+// enviar array
 carritoIncremental.addEventListener('click', (event) => {
 event.preventDefault()
 window.location.href='/index.html?idproduct='+ carrito
+
 })
-
-
-
-// enviar array
-
 
 
 //Enviar id USer Registrado
