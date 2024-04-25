@@ -1,0 +1,33 @@
+#ErroTry {
+    background-color: red;
+    text-align: center;
+    display: flex;
+    color: white;
+    flex-direction: column;
+}
+
+.titleInformationX {
+    color: black;
+    font-weight: bold;
+}
+
+.NameImage {
+    color: black;
+}
+
+.Result {
+    color: rgb(203, 198, 198);
+}
+
+.container img {
+    width: 100% !important;
+}
+
+/* Profile */
+.ImagenProfileUser {
+    width: 200px;
+    padding: 20px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
