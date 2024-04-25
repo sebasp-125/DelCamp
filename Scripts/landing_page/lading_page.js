@@ -69,11 +69,13 @@ function epass() {
 }
 epass()
 let comprasContador = 0;
-
+let carrito = []
 // Obtiene una referencia al elemento AdverCompra una sola vez
 const AdverCompra = document.getElementById('AdverCompra');
+const carritoIncremental = document.getElementById('carritoIncremental');
+
 function Icon(id) {
-    const carritoIncremental = document.getElementById('carritoIncremental');
+    
     console.log("Id de esa verdura..", id);
     if (id) {
         comprasContador++;
@@ -83,13 +85,19 @@ function Icon(id) {
                 <h6>Identificación producto: ${id} </h6>
             </div>
         `;
-        window.location.href = '../../index.html?IdProduct=' + id;
-        setTimeout(function () {
-            AdverCompra.innerHTML = '';
-        }, 5000);
+        carrito.push(id)
+        console.log(carrito);  
     }
     carritoIncremental.textContent = `Carrito ${comprasContador}`;
 }
+
+// enviar array
+carritoIncremental.addEventListener('click', (event) => {
+event.preventDefault()
+window.location.href='/index.html?idproduct='+ carrito
+
+})
+
 
 //Enviar id USer Registrado
 document.getElementById('IMAGENPROFILE').addEventListener('click' , function(event){
@@ -99,3 +107,5 @@ document.getElementById('IMAGENPROFILE').addEventListener('click' , function(eve
     console.log(ValidationId);
     window.location.href = "/Components/PerfilUser.html?IdUserLogin=" + ValidationId
 });
+
+

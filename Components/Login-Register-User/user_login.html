@@ -20,18 +20,18 @@
             <select class="user-type" id="user_type">
                 <option disabled selected value="0">Tipo de usuario</option>
                 <option value="buyer">Campesino</option>
+                <option value="seller">Comprador</option>
             </select>
-            <label for="user-lastname">Correo electrónico</label>
-            <input class="user-name" type="email" id="campoCorreo"  placeholder="Ejemplo@gmail.com">
+            <label for="user-email">Correo electrónico</label>
+            <input class="user-email" type="email" id="campoCorreo" placeholder="Ejemplo@gmail.com">
 
-            <label for="user-lastname">Contraseña</label>
-            <input class="user-name" type="password"  id="campoContraseña" placeholder="********">
+            <label for="user-password">Contraseña</label>
+            <input class="user-password" type="password" id="campoContraseña" placeholder="********">
 
             <button class="btn-register" type="submit">Iniciar Sesión</button>
             <p>¿Aun no tienes una cuenta? <a href="/Components/Login-Register-User/user_register.html">Registrate</a>
             </p>
-            <p>Olvidaste tu contraseña? <a href="/Components/Login-Register-User/user_register.html">Recuperar
-                    Contraseña</a></p>
+            <p>Olvidaste tu contraseña? <a href="#">Recuperar Contraseña</a></p>
         </form>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
