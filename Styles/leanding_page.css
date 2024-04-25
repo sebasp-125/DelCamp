@@ -273,3 +273,48 @@ footer ul > li:hover{
     padding: 10px;
     margin-left: 20px;
 }
+
+/*INFORMACION DE DELCAMP HISTORIA, MISION, VISON*/
+
+.InfoDelcamp{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    text-align: center;
+    font-size: large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 42vh;
+    margin: 20px;
+}
+
+.InfoDelcamp b{
+    color: #0ac763;
+}
+
+.InfoDelcamp img{
+    width: 30%;
+}
+
+.history img{
+    width: 20%;
+}
+
+.mision, .vision, .history{
+    padding: 10px;
+}
+
+.mision img{
+    border: 3px solid #000;
+    border-radius: 100%;
+}
+
+.titulo{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+
+.InfoDelcamp div:hover{
+    background-color: #8a8a8a3e;
+    transform: scale(1.1);
+}
+

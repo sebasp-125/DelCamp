@@ -10,8 +10,6 @@ function tryS() {
         try {
             axios.get('https://render-delcamp.onrender.com/productos')
                 .then((product) => {
-                    console.log(product.data);
-                    ofertas.removeChild(mensajeCargando);
                     product.data.forEach(element => {
                         ofertas.innerHTML += `
                         <div class="producto">
@@ -28,7 +26,7 @@ function tryS() {
                     `;
                         cantidadProductos++;
                     });
-                    resolve({ CANTIDAD: cantidadProductos });
+                    resolve({ CANTIDAD: cantidadProductos, DATT: product.data });
                     ofertas.style.width = `${280 * cantidadProductos}px`;
                 });
 
@@ -43,7 +41,6 @@ function epass() {
     tryS().then((success) => {
         console.log(success);
         let epa = success.CANTIDAD
-        console.log("Object ", epa);
         // traslacion de productos
         let contador_traslacion = 0;
         let total_productos = 305 * cantidadProductos
@@ -70,19 +67,15 @@ function epass() {
         traslacion_btn_derecho.addEventListener('click', trasladar_derecha)
     })
 }
-
 epass()
 let comprasContador = 0;
 
 // Obtiene una referencia al elemento AdverCompra una sola vez
 const AdverCompra = document.getElementById('AdverCompra');
-
 function Icon(id) {
     const carritoIncremental = document.getElementById('carritoIncremental');
-
     console.log("Id de esa verdura..", id);
     if (id) {
-        let TimeActual = new Date()
         comprasContador++;
         AdverCompra.innerHTML = `
             <div class="alert alert-primary" role="alert">
@@ -90,10 +83,19 @@ function Icon(id) {
                 <h6>Identificación producto: ${id} </h6>
             </div>
         `;
-
+        window.location.href = '../../index.html?IdProduct=' + id;
         setTimeout(function () {
             AdverCompra.innerHTML = '';
         }, 5000);
     }
     carritoIncremental.textContent = `Carrito ${comprasContador}`;
 }
+
+//Enviar id USer Registrado
+document.getElementById('IMAGENPROFILE').addEventListener('click' , function(event){
+    event.preventDefault();
+    let BajarId = new URLSearchParams(window.location.search);
+    let ValidationId = BajarId.get('IdUserLogin')
+    console.log(ValidationId);
+    window.location.href = "/Components/PerfilUser.html?IdUserLogin=" + ValidationId
+});
