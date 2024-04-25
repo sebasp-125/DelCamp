@@ -71,6 +71,7 @@ header > h3{
     margin-top: -2%;
     margin-bottom: 20%;
 }
+
 table{
     border-collapse: collapse;
     margin-top: -12%;
@@ -223,4 +224,21 @@ td{
     color:white;
     font-size: 25px;
     background-color: rgb(54, 197, 116);
+}
+
+input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-style: none;
+    border-bottom: 2px solid #0ac763;
+}
+
+.formEnvio {
+    width: 60%;
+    margin: 0px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    background-color: #fff;
 }
