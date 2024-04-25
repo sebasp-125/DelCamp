@@ -11,7 +11,6 @@ document.getElementById("user_type").addEventListener("change", function () {
 });
 //Verification Use
 document.querySelector('form').addEventListener('submit', function (event) {
-    console.log("Entro");
     event.preventDefault()
 
     let campoCorreo = document.getElementById('campoCorreo').value;
