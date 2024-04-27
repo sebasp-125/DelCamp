@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css.css" rel="stylesheet">
+    <title>Campesino</title>
+</head>
+<body>
+    <header>
+        <h3>Stack Products</h3>
+        <a href="/Components/leanding_page.html">Inicio</a>
+        <img src="..\imagenes\treslineas.jpg">
+    </header>
+
+    <section class="first">
+        <div class="imagen_carrusel">
+            <img src="..\imagenes\Agro_-_colombia.png">
+        </div>
+       
+        <div class="productos_comprados">
+            <h1>Productos Comprados</h1>
+            <hr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Productos</th>
+                        <th>Cantidades</th>
+                        <th>Descripción del Producto</th>
+                        <th>Total a Pagar</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+        <div class="programar_envio">
+            <div class="envío_ok">
+                <h2>Programar envío del Pedido:</h2>
+                <img src="..\imagenes\ok.jpg">
+            </div>
+
+            <div class="formEnvio">
+                <h2>Formulario de Envio</h2>
+                <hr >
+                <label for="user-town">Municipio</label>
+                <input class="user-town" type="text" id="campoTown" placeholder="@Bello">
+
+                <label for="user-city">Ciudad</label>
+                <input class="user-city" type="text" id="campoCity" placeholder="@Medellín">
+
+                <label for="user-address">Dirección</label>
+                <input class="user-address" type="text" id="campoAddress" placeholder="@Cr 62 #54-16">
+            </div>
+        
+        </div>
+
+        <div class="pagar">
+            <div class="parrafo">
+                <h1>Recuerda que cuando le des pagar
+                ya estas aceptando todos los términos
+                y tratamiento de datos de Delcamp
+                </h1>
+            </div>
+            <a href="pasarela.html" target="_blank"><button><img class="compras"src="..\imagenes\carrito-de-compras.png">Pagar</button></a>
+        </div>
+    </section>
+    <section class="second">
+        <div class="titulo_productos">
+            <img src="..\imagenes\izquierda.jpg">
+            <h2>Otros Productos</h2>
+            <img src="..\imagenes\derecha.jpg">
+        </div>
+        <div class="productos_final">
+            <div class="lista_productos">
+                <img src="..\imagenes\zanahorias.jpg">
+                <p><b>$25.8/kg</b><span>$29.9/kg</span></p>
+                <p>Zanahoría Extra</p>
+                <button>Agregar</button>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="productos_comprados.js"></script>
+</body>
+</html>

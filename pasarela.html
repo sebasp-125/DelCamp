@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="pasarela.css" rel="stylesheet">
+    <title>Pasarela</title>
+</head>
+<body>
+    <!-----------------------header------------------>
+    <header>
+        <h3>Stack Products</h3>
+        <h3>Profile</h3>
+        <h3>Seller</h3>
+        <img src="..\imagenes\treslineas.jpg">
+    </header>
+    
+    <div class="imagen_carrusel">
+        <img src="..\imagenes\Agro_-_colombia.png">
+    </div>
+
+    <div id="body2" class="body2"></div> <!--fondo oscuro / modal-->
+
+        <!-----------------------div medios de pago------------------>
+    <div class="div_padre"  id="mediospago">
+        <div class="tarjeta">
+            <div class="tit">
+                <h1>¿Cómo deseas Pagar?</h1>
+                <hr>
+            </div>
+
+            <!------------------ventana modal para agregar datos de la tarjeta cred/deb----------------------->
+            <div class="metodos_pago">
+                <section id="tarjetas">
+                    <img class="tarjetastatic" src="..\imagenes\tarjeta.png">
+                    <img class="closed" onclick="cerrar()"src="..\imagenes\cerrar.png">
+                    
+                    <form id="form">
+                        <input type="number" placeholder="Número de Tarjeta">
+                        <input type="text" placeholder="Nombre del Titular">
+                        <input type="date" placeholder="Fecha de Vencimiento">
+                        <input type="number" placeholder="Código CVV">
+                        <div id="boton">
+
+                        </div>
+                    
+                    </form>
+                </section>
+
+                <!-----------------Ventana modal para el pago en efectivo------------------------>
+                <section id="pago_efectivo">
+                    <h1>¡Entendido! Tu Pago se Cobrará una vez tu pedido haya llegado a tu destino</h1>
+                    <button id="efectivop" >Continuar</button>
+                </section>
+
+                <!--------------------ventana modal para el pago por PSE--------------------->
+                <section id="pse">
+                    <h1>Seleccione su Banco</h1>
+                    <img src="..\imagenes\cerrar.png" onclick="cerrar()" class="closed">
+                    <div class="bancos">
+                        <!-----------------cada una de las opciones de banco------------------------>
+                        <div id="AV Villas"class="listado_bancos">
+                            <h2>AV Villas</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco Agrario de Colombia" class="listado_bancos">
+                            <h2>Banco Agrario de Colombia</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco Caja Social" class="listado_bancos">
+                            <h2>Banco Caja Social</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco Cooperativo Coopcentral" class="listado_bancos">
+                            <h2>Banco Cooperativo Coopcentral</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco de Bogotá" class="listado_bancos">
+                            <h2>Banco de Bogotá</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco de Occidente" class="listado_bancos">
+                            <h2>Banco de Occidente</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco Falabella" class="listado_bancos">
+                            <h2>Banco Falabella</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco Itaú" class="listado_bancos">
+                            <h2>Banco Itaú</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Banco Mundo Mujer" class="listado_bancos">
+                            <h2>Banco Mundo Mujer</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Bancolombia" class="listado_bancos">
+                            <h2>Bancolombia</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="BBVA" class="listado_bancos">
+                            <h2>BBVA</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Cotrafa" class="listado_bancos">
+                            <h2>Cotrafa</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="DaviPlata" class="listado_bancos">
+                            <h2>DaviPlata</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Davivienda" class="listado_bancos">
+                            <h2>Davivienda</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Nequi" class="listado_bancos">
+                            <h2>Nequi</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="RappiPay" class="listado_bancos">
+                            <h2>RappiPay</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                        <div id="Santander" class="listado_bancos">
+                            <h2>Santander</h2><img class="flecha"src="..\imagenes\flechaminimal.png">
+                        </div>
+                    </div>
+                </section>
+
+                <!----------------Ventana modal para pago por Efecty------------------------->
+                <section id="efecty">
+                    <div class="div_efecty">
+                        <div class="aviso">
+                            <h2>Te pedirán estos datos</h2>
+                            <img src="..\imagenes\cerrar.png" onclick="cerrar()" class="closed">
+                        </div>
+                        <div class="datos_requeridos">
+                            <h3>
+                                Número de Convenio
+                                <span id="conv">11074</span>
+                            </h3>
+                            <h3>
+                                Referencia
+                                <span id="ref">2341987531</span>
+                            </h3>
+                        </div>
+                        <div class="datos_botones">
+                            <button onclick="convenio(1)">Cancelar Compra</button>
+                            <button onclick="convenio()">Generar Convenio</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!------------------medios de pago disponibles----------------------->
+                <div id="credito" onclick="datos(1)" class="targe">
+                    <img class="debcred" src="..\imagenes\creditoverde.png"><h2>Nueva Tarjeta de Crédito</h2><img class="flecha2"src="..\imagenes\flechaminimal.png">
+                </div>
+                <div id="debito"onclick="datos(2)" class="targe">
+                    <img class="debcred" src="..\imagenes\debitoverde.png"><h2>Nueva Tarjeta de Débito</h2><img class="flecha2"src="..\imagenes\flechaminimal.png">
+                </div>
+                <div id="efectivo" onclick="datos(3)"class="targe">
+                    <img class="debcred" src="..\imagenes\efectivo.png"><h2>Pago en Efectivo</h2><img class="flecha2"src="..\imagenes\flechaminimal.png">
+                </div>
+
+            </div>
+            
+            
+            <div class="tat">
+                <h1>Otros Métodos de Pago</h1>
+                <hr class="tathr">
+            </div>
+
+                <!----------------Otros medios de pago disponibles---------------------->
+            <div class="otros_medios">
+                <div onclick="datos(4)" class="targe">
+                    <img class="debcred" src="..\imagenes\pse.png"><h2>Transferencia con PSE</h2><img class="flecha2"src="..\imagenes\flechaminimal.png">
+                </div>
+                <div onclick="datos(5)" class="targe">
+                    <img class="debcred" src="..\imagenes\efecty.png"><h2>Pago con Efecty</h2><img class="flecha2"src="..\imagenes\flechaminimal.png">
+                </div>
+            </div>
+
+            <!------------------boton para mostrar segunda sección----------------------->
+            <div class="continue" onclick="mostrar()">
+                <button>Continuar</button>
+            </div>
+        
+        </div> 
+    </div>
+
+ <!----------------sección dos para verificacion de datos y pagar------------------------->
+    <div id="divpadre2">
+        <div class="descripcion">
+
+            <!------------------resumen de valor a pagar----------------------->
+            <div class="precios">
+                <h1>Confirma tu Compra</h1>
+
+             
+                    <div id="carac">
+                        <h2>Productos</h2>
+                        <h2>$9.057</h2>
+                    </div>
+                    
+                    <div id="dinero">
+                        <h2>Envío</h2>
+                        <h2>$11.900</h2>
+                    </div>
+             
+
+                <hr class="hrdescrip">
+                <h1 id="pagas">Pagas    <span>$20.957</span></h1>
+            </div>
+            
+            <!-------------------resumen de datos suministrados--------------------->
+            <div class="datos">
+                <h1>Comprueba los Datos</h1>
+                <img src="..\imagenes\ubi.png">
+                <h2>Carrera 49#59-43</h2>
+                <h2>El Congolo-Bello, Antioquia</h2>
+                <h2>Andrés Felipe Gonzalez Pineda - 3134684602</h2>
+                <p id="metodo">No has seleccionado un método de pago</p>
+                <a href="index.html"><button>Cambiar</button></a>
+            </div>
+
+            <!----------------boton para pagar------------------------->
+            <div class="envio">
+                <h1>¿Todo parece correcto?</h1>
+                <button onclick="pagar()">Pagar</button>
+                <p>Al pagar aceptas los Términos y Condiciones</p>
+            </div>
+
+            <!-----------------ventana modal por si el usuario no selecciona metodo de pago primero------------------------>
+            <div id="comprobar_pago">
+                <section class="regret">
+                    <h1>Por favor, debes de seleccionar un método de pago primero</h1>
+                    <hr>
+                    <h2>Regresa a la lista superior para seleccionar un método de pago</h2>
+                </section>
+                <section class="x_button">
+                    <img class="closed" onclick="cerrar()" class="closed2" src="..\imagenes\cerrar.png">
+                    <a onclick="cerrar()" href="#mediospago"><p>Continuar</p></a>
+                </section>  
+            </div>
+            
+            <!-----------------ventana modal cuando el usuario haya seleccionado metodo de pago------------------------>
+            <div id="pago_realizado">
+                <h1>Su Pago se Ha Realizado Con Éxito</h1>
+                <a href="index.html" target="_self"><button onclick="cerrar(1)">Continuar</button></a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="tarjetas.js"></script>
+</body>
+</html>
