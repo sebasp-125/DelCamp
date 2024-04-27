@@ -62,10 +62,14 @@ function cambiarFile() {
             <h5 class="NameImage">Type the Image: </h5> <h5 class="Result">${file.type}</h5>
             <div class="container">
                 <img src="${objectURL}" alt="profile image user selection" srcset="">
-                <button class="btn btn-outline-success" type="submit">Subir</button>
+                <button class="btn btn-outline-success" type="submit" onclick="reload()">Subir</button>
             </div>
         `;
     }
+}
+
+function reload() {
+    window.location.reload();
 }
 
 // Llamar a cambiarFile() cuando se selecciona un archivo
@@ -76,9 +80,9 @@ obtenerDatosUsuario()
         const sectionInformationUser = document.getElementById('sectionInformationUser');
         sectionInformationUser.innerHTML += ` 
             <img class='ImagenProfileUser' src="${imageProfileLOCAL}" class="img-thumbnail" alt="...">
-            <h2>${user.nombre}</h2>
+            <h4>${user.nombre}</h4>
             <h4>${user.apellido}</h4>
             <h4>${user.Correo}</h4>
-            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-success">Tu Perfil</button>
         `;
     });

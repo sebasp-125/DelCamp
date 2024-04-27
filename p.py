@@ -1,11 +1,12 @@
 import requests
 
 def obtener_campesinos():
+    print("Reload Api..")
     try:
         r = requests.get('https://render-delcamp.onrender.com/campesinos')
         if r:
+            print("Api reloaded successfully...")
             campesinos = r.json()
-            
             for campesino in campesinos:
                 print(f"Nombre: {campesino['nombre_finca']}")
                 print(f"Edad: {campesino['ubicacion_finca']}")
