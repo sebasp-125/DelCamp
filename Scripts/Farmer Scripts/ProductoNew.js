@@ -24,12 +24,12 @@ const EnviarALL = document.getElementById('EnviarALL').addEventListener('click',
 
     AddProduct(function (imageURL) {
         const campos = {
-            id_producto: Math.floor(Math.random() * 100) + 1,
+            id: Math.floor(Math.random() * 100) + 1,
             nombre_producto: names,
             descripcion: description,
             category: category,
             precio: price,
-            discount: discount,
+            descuento: discount,
             foto: imageURL
         };
         const todosLosParametrosValidos = Object.values(campos).every(parametro => !!parametro);
