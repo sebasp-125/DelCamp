@@ -38,9 +38,13 @@ function DelateUser(event) {
             let SpecifyIdUser = user.id;
             axios.delete(`https://render-delcamp.onrender.com/clientes/${SpecifyIdUser}`);
             console.warn("removed success!!");
+            document.getElementById('card_user').style.display = 'none';
+            document.querySelector('.container').innerHTML += `
+            <h1>Delate user correct. Format reload form </h1>
+            `
             setTimeout(() => {
                 GroupFunctions.UserLogin.RegisterUser();
-            }, 2000);
+            }, 5000);
         })
         .catch((err) => {
             console.error("error in delate user ", err);
@@ -53,9 +57,7 @@ function cambiarFile() {
     if (ImageProfileUser.files && ImageProfileUser.files[0]) {
         const file = ImageProfileUser.files[0];
         const objectURL = URL.createObjectURL(file);
-
         localStorage.setItem("ImAgen", objectURL);
-
         document.getElementById('InformationImageProfile').innerHTML = `
             <h4 class="titleInformationX">Information Image the Profile</h4>
             <h5 class="NameImage">Name actually image: <h5 class="Result">${file.name}</h5>
@@ -73,16 +75,15 @@ function reload() {
 }
 
 // Llamar a cambiarFile() cuando se selecciona un archivo
-document.getElementById('ImageProfileUser').addEventListener('change', cambiarFile);
 obtenerDatosUsuario()
     .then((user) => {
         let imageProfileLOCAL = localStorage.getItem("ImAgen");
-        const sectionInformationUser = document.getElementById('sectionInformationUser');
-        sectionInformationUser.innerHTML += ` 
+        const card_user = document.getElementById('card_user');
+        card_user.innerHTML += ` 
             <img class='ImagenProfileUser' src="${imageProfileLOCAL}" class="img-thumbnail" alt="...">
-            <h4>${user.nombre}</h4>
-            <h4>${user.apellido}</h4>
-            <h4>${user.Correo}</h4>
+            <h4> Nombre de Usuario: ${user.nombre}</h4>
+            <h4> Nombre de Apellido: ${user.apellido}</h4>
+            <h4> Correo Electronico: ${user.Correo}</h4>
             <button type="button" class="btn btn-success">Tu Perfil</button>
         `;
     });

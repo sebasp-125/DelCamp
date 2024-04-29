@@ -8,22 +8,27 @@ let cantidadProductos = 0;
 function tryS() {
     return new Promise((resolve) => {
         try {
+            ofertas.removeChild(mensajeCargando);
             axios.get('https://render-delcamp.onrender.com/productos')
                 .then((product) => {
                     product.data.forEach(element => {
                         ofertas.innerHTML += `
-                        <div class="producto">
-                            <div class="descuento"><p>${element.discount}% DTO.</p></div>
-                            <div class="foto_producto"><img src="${element.foto}" alt=""></div>
-                            <div class="informacion_producto">
-                                <div>
-                                    <p><b>${element.precio}</b></p><br>
-                                    <p>${element.nombre_producto}</p>
+                        <div class="father">
+                            <div class="producto">
+                                <div class="descuento"><p>45% DTO.</p></div>
+                                <div class="foto_producto"><img src="${element.foto}" alt=""></div>
+                                <div class="informacion_producto">
+                                    <div>
+                                        <h4 class="PrecioProducto"><b>${element.precio}$</b></h4><br>
+                                        <p class="nombre_producto">${element.nombre_producto}</p>
+                                        <p class="descriptionElement"><strong>${element.descripcion}</strong></p>
+                                    </div>
+                                    <button class="btnProductoAndres" onclick="Icon(${element.id_producto})">Agregar</button>
                                 </div>
-                                <button onclick="Icon(${element.id_producto})">Agregar</button>
                             </div>
                         </div>
                     `;
+                    
                         cantidadProductos++;
                     });
                     resolve({ CANTIDAD: cantidadProductos, DATT: product.data });
@@ -75,7 +80,7 @@ const AdverCompra = document.getElementById('AdverCompra');
 const carritoIncremental = document.getElementById('carritoIncremental');
 
 function Icon(id) {
-    
+
     console.log("Id de esa verdura..", id);
     if (id) {
         comprasContador++;
@@ -86,21 +91,21 @@ function Icon(id) {
             </div>
         `;
         carrito.push(id)
-        console.log(carrito);  
+        console.log(carrito);
     }
     carritoIncremental.textContent = `Carrito ${comprasContador}`;
 }
 
 // enviar array
 carritoIncremental.addEventListener('click', (event) => {
-event.preventDefault()
-window.location.href='/index.html?idproduct='+ carrito
+    event.preventDefault()
+    window.location.href = '/index.html?idproduct=' + carrito
 
 })
 
 
 //Enviar id USer Registrado
-document.getElementById('IMAGENPROFILE').addEventListener('click' , function(event){
+document.getElementById('IMAGENPROFILE').addEventListener('click', function (event) {
     event.preventDefault();
     let BajarId = new URLSearchParams(window.location.search);
     let ValidationId = BajarId.get('IdUserLogin')
