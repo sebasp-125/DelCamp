@@ -177,7 +177,7 @@ hr{
 }
 #tarjetas>form>input:focus{
     outline: none;
-    border-bottom: 2px solid rgb(64, 226, 64);
+    border-bottom: 2px solid #f07a19;
 }
 #boton{
    background-color: rgb(255, 255, 255);

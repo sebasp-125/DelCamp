@@ -55,8 +55,9 @@ header > h3{
     background-color: rgb(255, 255, 255);
     float: right;
     width: 100%;
-    height: 40%;
+    height: 44%;
     display: flex;
+    margin-bottom: -5%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -92,10 +93,48 @@ td{
     width: 100%;
     height: 29%;
     display: flex;
+    margin-top: 1%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.formEnvio {
+    width: 60%;
+    height: 70%;
+    margin: 0px;
+    padding: 2% 3% 5% 3%;
+    box-sizing: border-box;
+    border-radius: 2rem;
+    background-color: #fff;
+}
+.formEnvio>h2{
+    font-size: 55px;
+    text-align: center;
+    margin-bottom: 1%;
+}
+.formEnvio>hr{
+    width: 60%;
+    margin: -1% 0% 4% 20%;
+    border: 6px solid rgb(164, 241, 206);
+
+}
+.formEnvio>label,.formEnvio>input{
+    font-size: 32px;
+    width: 10%;
+}
+.formEnvio>input:focus{
+    outline: none;
+    border-bottom: 2px solid #f07a19;
+}
+input[type="text"]{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-style: none;
+    border-bottom: 2px solid #0ac763;
+}
+
+
 .envío_ok{
     display: flex;
     justify-content: flex-start;
@@ -226,19 +265,3 @@ td{
     background-color: rgb(54, 197, 116);
 }
 
-input[type="text"]{
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-style: none;
-    border-bottom: 2px solid #0ac763;
-}
-
-.formEnvio {
-    width: 60%;
-    margin: 0px;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 2rem;
-    background-color: #fff;
-}
