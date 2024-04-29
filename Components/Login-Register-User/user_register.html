@@ -47,7 +47,7 @@
                 <label for="direct-message">Recibir mensajes directos</label>
                 <input type="checkbox" id="direct-message" />
             </div>
-
+            <p id="TrueFormulario"></p>
             <button class="btn-register" type="submit">Registrar</button>
             <button class="btn-cancel" type="reset">Cancelar</button>
         </form>
@@ -65,8 +65,6 @@
                 window.location.href = "../LoginRegister-Farmer/Register-Farmer.html";
             }
         });
-
-   
         let formulario = document.querySelector('form')
         formulario.addEventListener('submit', function (event) {
             event.preventDefault()
@@ -88,7 +86,13 @@
                 })
                 .then((dataPost) => {
                     console.log(dataPost.data)
-                    window.location.href = '/Components/leanding_page.html'
+                    document.getElementById('TrueFormulario').innerHTML = `
+                    <h1>Registrado con Exito</h1>
+                    `
+                    setTimeout(() => {
+                        window.location.href = '../Login-Register-User/user_login.html'
+
+                    }, 3000);
                 })
                 .catch((epa) => {
                     console.log("Error ", epa)
