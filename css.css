@@ -1,5 +1,4 @@
 body{
-    background-color: red;
     margin: 0px;
     padding:0px;
     overflow-x: hidden;
@@ -69,8 +68,7 @@ header > h3{
     border: 7px solid rgb(164, 241, 206);
     width: 55%;
     border-radius: 5px;
-    margin-top: -2%;
-    margin-bottom: 20%;
+    margin-bottom: 20%; 
 }
 
 table{
@@ -114,7 +112,6 @@ td{
 }
 .formEnvio>hr{
     width: 60%;
-    margin: -1% 0% 4% 20%;
     border: 6px solid rgb(164, 241, 206);
 
 }
