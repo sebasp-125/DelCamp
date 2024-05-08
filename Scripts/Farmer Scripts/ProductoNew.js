@@ -11,6 +11,10 @@ function AddProduct(callback) {
         }
         reader.readAsDataURL(input.files[0]);
     }
+
+    let card_1= document.getElementById('card_1')
+    card_1.style.display='none'
+    input.style.display='none'
 }
 
 const EnviarALL = document.getElementById('EnviarALL').addEventListener('click', function (event) {
