@@ -4,13 +4,16 @@ body {
     padding: 0;
     background-color: #f0f0f0;
     display: flex;
-    justify-content: center;
     text-align: center;
+    background-image: url(/image/cliente\ fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .container {
     width: 400px;
-    margin: 50px;
+    margin-top: 190px;
+    margin-left: 500px;
     padding: 30px;
     border: 1px solid #ccc;
     border-radius: 2rem;
