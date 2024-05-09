@@ -12,6 +12,26 @@
     <title>Todos los Productos</title>
 </head>
 <body>
+    <header>
+        <div class="narvar">
+            <ul>
+                <a href="../Login-Register-User/user_login.html">Login/Register</a>
+                <a href="../LoginRegister-Farmer/Login-Farmer.html">Campesino</a>
+                <a href="../TypeS/AllCamp-DelCamp.html">Campesinos - DelCamp</a>
+                <i class="fa-solid fa-bars"></i>
+                <img id="IMAGENPROFILE" src="/image/logo.png" class="img-thumbnail" alt="..." width="40px">
+            </ul>
+        </div>
+        <div class="container_carrusel_leading_page">
+            <div class="carrusel_leanding_page">
+                <div><img src="/image/Banner.png" alt=""></div>
+            </div>
+            <div class="logo"><img src="/image/logo.png" alt=""></div>
+        </div>
+        <div id="AdverCompra">
+
+        </div>
+    </header>
     <i id="Back" class="fa-solid fa-circle-arrow-left"></i>
 
     <div class="border">
@@ -26,7 +46,44 @@
     <div id="AllProducts">
 
     </div>
+    <footer>
+        <div>
+            <h3>Mayoristas Agrícolas S.A.</h3>
+            <p>En delcamp Transformamos la distribución agrícola con soluciones sostenibles para un futuro más verde y rentable.</p>
+            <h2>Delcamp</h2>
+        </div>
+        <div>
+            <h2>Site map</h2>
+            <ul>
+                <li>Sobre nosotros</li>
+                <li>Productos</li>
+                <li>Servicios</li>
+                <li>Contáctenos</li>
+                <li>Blog</li>
+                <li>Talento Delcamp</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Legal</h2>
+            <ul>
+                <li>Politica de protección de datos</li>
+                <li>FAQ</li>
+            </ul>
+        </div>
+        <div>
+            <h2>contáctanos</h2>
+            <ul>
+                <p>Autopista Medellín Km 3.4 Centro <br><br> bodega 36</p>
+                <p>TEL: <b>+57 3026020183</b></p>
+            </ul>
 
+            <div class="redes">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+        </div>
+    </footer>
     <script>
         const Back = document.getElementById('Back').addEventListener('click', function () {
             console.log("Yes");
@@ -44,15 +101,12 @@
     <img width="200px" src="${printpro.foto}" alt="${printpro.id}" />
     <div class="info">
         <h1>${printpro.nombre_producto}</h1>
-        <label for="">Nombre del Producto: </label>
     </div>
     <div class="info">
-        <h3>${printpro.descripcion}</h3>
-        <label for="">Descripción: </label>
+        <p>${printpro.descripcion}</p>
     </div>
     <div class="info">
-        <h4><strong>${printpro.precio}</strong></h4>
-        <label for="">Precio del Producto: </label>
+        <p><strong>Precio: </strong>${printpro.precio}$</p>
     </div>
     <button class="Shopping">Comprar</button>
 </div>
@@ -95,11 +149,19 @@
                     AllProductsContainer.innerHTML = '';
                     filter.forEach(Search => {
                         AllProductsContainer.innerHTML += `
-                <img width="200px" src="${Search.foto}" alt="${Search.id}" />
-                <h1>${Search.nombre_producto}</h1>
-                <h3>${Search.descripcion}</h3>
-                <h4><strong>${Search.precio}</strong></h4>
-            <button class="Shopping">Comprar</button>
+                        <div class="product">
+                            <img width="200px" src="${Search.foto}" alt="${Search.id}" />
+                            <div class="info">
+                                <h1>${Search.nombre_producto}</h1>
+                            </div>
+                            <div class="info">
+                                <p>${Search.descripcion}</p>
+                            </div>
+                            <div class="info">
+                                <p><strong>Precio: </strong>${Search.precio}$</p>
+                            </div>
+                            <button class="Shopping">Comprar</button>
+                        </div>
                 `;
                     });
                 });

@@ -5,7 +5,6 @@ document.getElementById('Back').addEventListener('click', function () {
   localStorage.clear();
 })
 
-
 idProducts.forEach(idP => {
   axios.get(`https://render-delcamp.onrender.com/productos/${idP}`)
     .then((response) => {
@@ -16,27 +15,6 @@ idProducts.forEach(idP => {
       console.error("Error al obtener producto ", err);
     });
 });
-
-let mostrarModal = true;
-
-document.getElementById('closeModal').addEventListener('click', function () {
-  console.warn("Thanks to ");
-  setTimeout(() => {
-    window.location.reload();
-    mostrarModal = false;
-  }, 3000);
-})
-
-function activarModal() {
-  if (mostrarModal) {
-      jQuery('#exampleModal').modal('show');
-  }
-}
-
-jQuery(document).ready(function(){
-  activarModal()
-});
-
 
 // Crear el título de la tabla fuera del bucle
 document.getElementById('tr_id4').innerHTML = `
