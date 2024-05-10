@@ -27,15 +27,15 @@ document.getElementById('closeModal').addEventListener('click', function () {
   }, 3000);
 })
 
-function activarModal() {
-  if (mostrarModal) {
-      jQuery('#exampleModal').modal('show');
-  }
-}
+// function activarModal() {
+//   if (mostrarModal) {
+//       jQuery('#exampleModal').modal('show');
+//   }
+// }
 
-jQuery(document).ready(function(){
-  activarModal()
-});
+// jQuery(document).ready(function(){
+//   activarModal()
+// });
 
 
 // Crear el título de la tabla fuera del bucle
