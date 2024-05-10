@@ -5,7 +5,6 @@ document.getElementById('Back').addEventListener('click', function () {
   localStorage.clear();
 })
 
-
 idProducts.forEach(idP => {
   axios.get(`https://render-delcamp.onrender.com/productos/${idP}`)
     .then((response) => {
@@ -27,17 +26,6 @@ document.getElementById('closeModal').addEventListener('click', function () {
   }, 3000);
 })
 
-function activarModal() {
-  if (mostrarModal) {
-      jQuery('#exampleModal').modal('show');
-  }
-}
-
-jQuery(document).ready(function(){
-  activarModal()
-});
-
-
 // Crear el título de la tabla fuera del bucle
 document.getElementById('tr_id4').innerHTML = `
   <table>
@@ -46,14 +34,13 @@ document.getElementById('tr_id4').innerHTML = `
         <th>Productos</th>
         <th>Cantidades</th>
         <th>Descripción del Producto</th>
-        <th>Total a Pagar</th>
+        <th>Precio</th>
         <th>Opciones</th>
       </tr>
     </thead>
     <tbody id="table_body"></tbody>
   </table>
 `;
-
 // Agregar filas al cuerpo de la tabla
 idProducts.forEach(idP => {
   let productData = localStorage.getItem(`ProducSelect_${idP}`);
@@ -65,12 +52,32 @@ idProducts.forEach(idP => {
           <td><img src="${product.foto}" alt="" srcset=""></td>
           <td>${product.nombre_producto}</td>
           <td>${product.descripcion}</td>
-          <td>${product.id}</td>
+          <td>${product.precio}</td>
           <td>
-          <button>Eliminar</button>
+          <button onclick="DelateProduct(${idP})">Eliminar</button>
           <button>Cancelar</button>
           </td>
         </tr>
       `;
+      let row = product.precio;
+      let disccont = product.descuento;
+      let parsed = parseFloat(row);
+      let suma = parsed + parsed ;
+      document.getElementById('total_a_the_buy').innerHTML = `
+      <hr>
+      <h1>¡Total a pagar! Productos seleccionados</h1>
+      <p>Total: </p>
+      <h6>${row}</h6>
+      <h4>${disccont}</h4>
+      <h3>${suma}</h3>
+      <hr>
+      <h1>Saldo: </h1>
+      <h2>${suma}</h2>
+      `
   }
 });
+
+// Delate product list storange
+function DelateProduct(ProductId) {
+  console.warn(ProductId);
+}
