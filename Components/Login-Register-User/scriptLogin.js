@@ -18,7 +18,6 @@ document.querySelector('form').addEventListener('submit', function (event) {
 
     let campoCorreo = document.getElementById('campoCorreo').value;
     let campoContraseña = document.getElementById('campoContraseña').value;
-
     axios.get('https://render-delcamp.onrender.com/clientes')
         .then((dataPost) => {
             let flag = false;

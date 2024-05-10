@@ -1,21 +1,32 @@
 function AddProduct(callback) {
     let input = document.getElementById('AddProduc-Input');
     let ImageProfile = document.getElementById('ProducNew');
+    let guardarBtn = document.getElementById('btn_guardar');
 
     if (input.files && input.files[0]) {
         let reader = new FileReader();
         reader.onload = function (e) {
             ImageProfile.src = e.target.result;
-            imageURL = ImageProfile.src;
+            let imageURL = ImageProfile.src;
             callback(imageURL);
-        }
+        };
         reader.readAsDataURL(input.files[0]);
     }
+    guardarBtn.innerHTML = 'Editar';
+    guardarBtn.onclick = function() {
+        window.location.reload();
+    };
 
-    let card_1= document.getElementById('card_1')
-    card_1.style.display='none'
-    input.style.display='none'
+    // Ocultar elementos después de cargar la imagen
+    let card_1 = document.getElementById('card_1');
+    if (card_1) {
+        card_1.style.display = 'none';
+    }
+    if (input) {
+        input.style.display = 'none';
+    }
 }
+
 
 const EnviarALL = document.getElementById('EnviarALL').addEventListener('click', function (event) {
     let names = document.getElementById('NombreProducto').value;
@@ -41,13 +52,12 @@ const EnviarALL = document.getElementById('EnviarALL').addEventListener('click',
             axios.post('https://render-delcamp.onrender.com/productos', campos)
                 .then((POSTdatos) => {
                     console.warn("Yes. Data up to de State: " + POSTdatos);
+                    window.location.href = '../../Components/leanding_page.html'
                 })
                 .catch((Error) => {
                     console.error("Error the up data base: " + Error);
                 })
-                .finally((final) => {
-                    console.log("--Thank you-- ", final);
-                })
+
         } else {
             document.getElementById('ReloadPOST').innerHTML = `
             <div class="alert alert-danger" role="alert">

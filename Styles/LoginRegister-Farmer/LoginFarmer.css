@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -7,46 +6,61 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f8ff; 
-    justify-content: space-around;
+    background-image: url('../../Imagenes/Login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    padding-left: 50px;
 }
 
+/* Estilos del formulario */
 form {
-    border: 2px solid #4a4e69;
-    background-color: #edf2f4; 
-    padding: 50px;
-    max-width: 400px;
-    width: 80%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    max-width: 500px;
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Estilos de las etiquetas */
 label {
-    color: #4a4e69; 
+    font-size: 16px;
+    color: #333;
     margin-bottom: 5px;
 }
 
-input {
-    width: 100%;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #4a4e69; 
-    background-color: #fff;
+/* label and input */
+label, input {
+    display: flex;
+    justify-content: center;
 }
 
+/* Estilos de los campos de entrada */
+input {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid #ccc; 
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+/* Estilos de los campos de entrada cuando están enfocados */
 input:focus {
     outline: none;
     border-color: #1d3557;
 }
 
+/* Estilos del botón */
 button {
     width: 100%;
     margin-top: 20px;
     padding: 15px;
-    border-radius: 20px;
+    border-radius: 25px;
     border: none;
     background-color: #1d3557; 
     color: #fff;
@@ -54,20 +68,20 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/* Estilos del botón cuando el cursor se sitúa sobre él */
 button:hover {
     background-color: #457b9d; 
 }
 
+/* Estilos de los enlaces */
 a {
     text-decoration: none;
     color: #1d3557; 
 }
 
-.fa-solid.fa-user {
-    font-size: 30vh;
-    margin: 20px;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    box-sizing: border-box;
+/* error-message */
+#error-message {
+    margin-top: 20px;
+    color: red;
+    text-align: center;
 }

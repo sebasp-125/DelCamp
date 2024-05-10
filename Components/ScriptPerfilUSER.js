@@ -63,7 +63,7 @@ function cambiarFile() {
             <h5 class="NameImage">Name actually image: <h5 class="Result">${file.name}</h5>
             <h5 class="NameImage">Type the Image: </h5> <h5 class="Result">${file.type}</h5>
             <div class="container">
-                <img src="${objectURL}" alt="profile image user selection" srcset="">
+                <img class="imagenProfile" src="${objectURL}" alt="profile image user selection" srcset="">
                 <button class="btn btn-outline-success" type="submit" onclick="reload()">Subir</button>
             </div>
         `;
