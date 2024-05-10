@@ -16,16 +16,6 @@ idProducts.forEach(idP => {
     });
 });
 
-let mostrarModal = true;
-
-document.getElementById('closeModal').addEventListener('click', function () {
-  console.warn("Thanks to ");
-  setTimeout(() => {
-    window.location.reload();
-    mostrarModal = false;
-  }, 3000);
-})
-
 // Crear el título de la tabla fuera del bucle
 document.getElementById('tr_id4').innerHTML = `
   <table>
