@@ -1,5 +1,4 @@
 body{
-    background-color: red;
     margin: 0px;
     padding:0px;
     overflow-x: hidden;
@@ -64,18 +63,24 @@ header > h3{
 }
 .productos_comprados>h1{
     font-size:70px;
+    margin-top: 3%;
 }
 .productos_comprados>hr{
     border: 7px solid rgb(164, 241, 206);
     width: 55%;
     border-radius: 5px;
-    margin-top: -2%;
-    margin-bottom: 20%;
+    margin-bottom: 20%; 
 }
 
 table{
     border-collapse: collapse;
     margin-top: -12%;
+}
+#tr_id4{
+  position: relative;
+  top:-20%;
+  width: 60%;
+  overflow-y: scroll;
 }
 th,.two2>thead>tr>th{
     font-size: 35px;
@@ -114,7 +119,6 @@ td{
 }
 .formEnvio>hr{
     width: 60%;
-    margin: -1% 0% 4% 20%;
     border: 6px solid rgb(164, 241, 206);
 
 }
@@ -134,7 +138,9 @@ input[type="text"]{
     border-bottom: 2px solid #0ac763;
 }
 
-
+i{
+   font-size: 30px;
+}
 .envío_ok{
     display: flex;
     justify-content: flex-start;

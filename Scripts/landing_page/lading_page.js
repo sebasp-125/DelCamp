@@ -23,12 +23,11 @@ function tryS() {
                                         <p class="nombre_producto">${element.nombre_producto}</p>
                                         <p class="descriptionElement"><strong>${element.descripcion}</strong></p>
                                     </div>
-                                    <button class="btnProductoAndres" onclick="Icon(${element.id_producto})">Agregar</button>
+                                    <button class="btnProductoAndres" onclick="Icon(${element.id})">Agregar</button>
                                 </div>
                             </div>
                         </div>
                     `;
-                    
                         cantidadProductos++;
                     });
                     resolve({ CANTIDAD: cantidadProductos, DATT: product.data });
@@ -44,7 +43,6 @@ function tryS() {
 
 function epass() {
     tryS().then((success) => {
-        console.log(success);
         let epa = success.CANTIDAD
         // traslacion de productos
         let contador_traslacion = 0;
@@ -80,7 +78,6 @@ const AdverCompra = document.getElementById('AdverCompra');
 const carritoIncremental = document.getElementById('carritoIncremental');
 
 function Icon(id) {
-
     console.log("Id de esa verdura..", id);
     if (id) {
         comprasContador++;
@@ -99,10 +96,8 @@ function Icon(id) {
 // enviar array
 carritoIncremental.addEventListener('click', (event) => {
     event.preventDefault()
-    window.location.href = '/index.html?idproduct=' + carrito
-
+    window.location.href = '/index.html?idproduct=' + carrito;
 })
-
 
 //Enviar id USer Registrado
 document.getElementById('IMAGENPROFILE').addEventListener('click', function (event) {

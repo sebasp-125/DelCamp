@@ -1,25 +1,14 @@
-body  {
-    background-color: rgb(171, 170, 168);
-    background-image: url('../LogoDELCAMP.jpg');
-    background-repeat: no-repeat;
-}
 
-#ErroTry {
-    background-color: red;
-    text-align: center;
+
+.father  {
     display: flex;
-    color: white;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .ImagenProfileUser {
-    padding-top: 20px;
-    border-radius: 50%;
-}
+    width: 100%;
 
-.Contenedor {
-    display: flex;
-    float: left;
 }
 
 #sectionInformationUser {
@@ -31,14 +20,71 @@ body  {
     text-align: left;
 }
 
-h4 {
-    letter-spacing: 0.25em;
-    word-spacing: 0.25em;
-    color: black;
-    font-weight: bold;
+.btn-success {
+    width: 100%;
 }
 
-.btn-success {
-    margin-top: 20px;
+.card {
+    padding: 30px;
+}
+
+/* footer */
+
+footer{
+    margin-top: 200px;
     width: 100%;
+    height: 400px;
+    background-image: url('/image/imagen\ futer.png');
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    
+}
+
+footer div{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    text-align: start;
+    ul{
+        list-style: none;
+        padding: 0%;
+        li{
+            margin: 10px 0px;
+        }
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+    h2, h3{
+        margin: 30px 0px;
+    }
+}
+
+footer ul > li:hover{
+    list-style:circle;
+}
+
+.redes{
+    width: 100%;
+    padding: 0%;
+    display: flex;
+    flex-direction:row ;
+    gap: 50px;
+    font-size: 30px;
+    margin: 30px 0px;
+}
+
+@keyframes vibracion {
+    0%{transform: translateX(0px);}
+    25%{transform: translateX(-10px);}
+    50%{transform: translateX(10px);}
+    75%{transform: translateX(-10px);}
+    100%{transform: translateX(0px);}
+}
+
+.redes i:hover{
+    animation:vibracion 0.5s infinite;
 }

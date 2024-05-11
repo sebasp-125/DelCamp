@@ -1,6 +1,9 @@
 body {
+    background-color: whitesmoke;
     margin: 20px;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0%;
+    padding: 0%;
 }
 
 .SearchInputDIV {
@@ -30,14 +33,13 @@ body {
 }
 
 #AllProducts {
-    margin-top:20px ;
-    display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(150px , 10fr));
-    gap: 5px;
-    align-items: center;
-    justify-content: center;
-    align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    margin-top:20px ;
+    gap: 25px;
+    align-items: center;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .Shopping {
@@ -52,8 +54,14 @@ body {
 }
 
 .product {
+    width: 15%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
+    display: flex;
     flex-direction: column;
-    margin-bottom: 20px; 
+    align-items: center;
 }
 
 .info {
@@ -61,8 +69,9 @@ body {
 }
 
 .product img {
-    width: 100%;
-    height: auto;
+    display: flex;
+    width: 222.7px;
+    height: 174.88px;
 }
 
 label {
@@ -72,4 +81,126 @@ label {
 
 ::-webkit-scrollbar{
     display: none;
+}
+
+.narvar{
+    width: 100%;
+    height: 50px;
+    color: black !important;
+    display: flex;
+    justify-content: end;
+}
+
+.narvar ul{
+    width: 45%;
+    margin: 10px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    font-size: 17px;
+    li, i{
+        cursor: pointer;
+    }
+    
+    a{
+
+        text-decoration: none;
+    }
+}
+
+.narvar a:visited{
+    color: black;
+}
+.container_carrusel_leading_page{
+    position: relative;
+}
+
+.carrusel_leanding_page{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+}
+.carrusel_leanding_page div{
+    width: 100%;
+    height: 300px;
+    img {
+        width: 100%;
+        height: 300px;
+    }
+}
+.logo{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background-color: yellow;
+    top: 0;
+    margin: 70px 80px;
+    border-radius: 50%;
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+}
+
+
+footer{
+    width: 100%;
+    height: 400px;
+    background-image: url('/image/imagen\ futer.png');
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    
+}
+
+footer div{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    text-align: start;
+    ul{
+        list-style: none;
+        padding: 0%;
+        li{
+            margin: 10px 0px;
+        }
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+    h2, h3{
+        margin: 30px 0px;
+    }
+}
+
+footer ul > li:hover{
+    list-style:circle;
+}
+
+.redes{
+    width: 100%;
+    padding: 0%;
+    display: flex;
+    flex-direction:row ;
+    gap: 50px;
+    font-size: 30px;
+    margin: 30px 0px;
+}
+
+@keyframes vibracion {
+    0%{transform: translateX(0px);}
+    25%{transform: translateX(-10px);}
+    50%{transform: translateX(10px);}
+    75%{transform: translateX(-10px);}
+    100%{transform: translateX(0px);}
+}
+
+.redes i:hover{
+    animation:vibracion 0.5s infinite;
 }
